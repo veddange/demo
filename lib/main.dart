@@ -1,4 +1,3 @@
-
 import 'package:demo/Authentication/login.dart';
 import 'package:flutter/material.dart';
 
@@ -67,10 +66,14 @@ class _MyHomePageState extends State<MyHomePage> {
               style: Theme.of(context).textTheme.headlineMedium,
             ),
             OutlinedButton(
+                style: const ButtonStyle(
+                  overlayColor: MaterialStatePropertyAll(Colors.amberAccent),
+                ),
                 onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => const LoginState()));
-                  // Navigator.of(context).pushNamed('/login');
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const LoginState()));
                 },
                 child: const Text("Navigation"))
           ],

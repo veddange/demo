@@ -82,7 +82,16 @@ class Otp extends State<OtpState> {
               ),
               SizedBox(
                 width: 300,
-                child: OutlinedButton(
+                child: OutlinedButton (
+                    style: const ButtonStyle(
+                      overlayColor:  MaterialStatePropertyAll(Color.fromARGB(255, 218, 202, 216)),
+                      backgroundColor:  MaterialStatePropertyAll(Color.fromARGB(255, 211, 187, 255)),
+                      foregroundColor:  MaterialStatePropertyAll(Colors.indigo),
+                      side:  MaterialStatePropertyAll(BorderSide(
+                                    color: Color.fromARGB(255, 211, 187, 255),
+                                    style: BorderStyle.solid,
+                                    width: 2.0)),
+                                alignment: Alignment.center),
                     onPressed: () {
                       if (txtOtp.text.length == 6) {
                         Navigator.of(context).push(MaterialPageRoute(
@@ -107,7 +116,13 @@ class Otp extends State<OtpState> {
                       // Navigator.of(context).push(MaterialPageRoute(
                       //       builder: (context) => const LoginState()));
                     },
-                    child: const Text("Continue")),
+                    
+                    child: const Text("Continue",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold
+                            ),
+                    )
+                  ),
               ),
               const Spacer()
             ],

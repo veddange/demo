@@ -151,13 +151,19 @@ class SignUp extends StatelessWidget {
                       }
                     },
                     style: const ButtonStyle(
-                        foregroundColor: MaterialStatePropertyAll(Colors.blue),
+                        overlayColor: MaterialStatePropertyAll(Colors.limeAccent),
+                        backgroundColor: MaterialStatePropertyAll(Colors.lightGreenAccent),
+                        foregroundColor: MaterialStatePropertyAll(Colors.redAccent),
                         side: MaterialStatePropertyAll(BorderSide(
-                          color: Colors.black,
+                          color: Colors.lightGreenAccent,
                           style: BorderStyle.solid,
                           width: 2.0,
                         ))),
-                    child: const Text("Sign Up")),
+                    child: const Text("Sign Up",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                            ),
+                    )),
               ),
               const Spacer()
             ],

@@ -90,26 +90,18 @@ class MobileLogin extends State<MyWidget> {
                     Navigator.of(context).push(MaterialPageRoute(
                         builder: (context) => const OtpState()));
                   },
-                  style: ButtonStyle(
-                      foregroundColor: isHover
-                          ? const MaterialStatePropertyAll(Colors.white)
-                          : const MaterialStatePropertyAll(Colors.blue),
-                      backgroundColor: isHover
-                          ? const MaterialStatePropertyAll(Colors.blue)
-                          : const MaterialStatePropertyAll(Colors.white),
-                      side: const MaterialStatePropertyAll(BorderSide(
+                  style: const ButtonStyle(
+                      overlayColor: MaterialStatePropertyAll(Colors.cyan),
+                      foregroundColor: MaterialStatePropertyAll(Colors.black),
+                      backgroundColor:
+                          MaterialStatePropertyAll(Colors.cyanAccent),
+                      side: MaterialStatePropertyAll(BorderSide(
                         color: Colors.lightBlueAccent,
                       ))),
-                  onHover: (val) {
-                    setState(() {
-                      if (isHover) {
-                        isHover = false;
-                      } else {
-                        isHover = true;
-                      }
-                    });
-                  },
-                  child: const Text("Login")),
+                  child: const Text(
+                    "Login",
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  )),
             ),
             const Spacer()
           ],

@@ -16,7 +16,7 @@ class LoginState extends StatefulWidget {
 // ignore: must_be_immutable
 class Login extends State<LoginState> {
   Color color = Colors.deepOrangeAccent;
-  var isLoginHover = false;
+  bool isLoginHover = false;
   var isSignUpHover = false;
   var isMobileHover = false;
   TextEditingController txtName = TextEditingController();
@@ -117,28 +117,24 @@ class Login extends State<LoginState> {
                               debugPrint(txtPass.text);
                             }
                           },
-                          onHover: (value) {
-                            setState(() {
-                              if (isLoginHover) {
-                              isLoginHover = false;
-                            } else {
-                              isLoginHover = true;
-                            }
-                            });
-                          },
-                          style: ButtonStyle(
+                          style: const ButtonStyle(
+                              overlayColor:
+                                  MaterialStatePropertyAll(Colors.blueGrey),
                               backgroundColor:
-                                  isLoginHover ? const MaterialStatePropertyAll(Colors.blue) : const MaterialStatePropertyAll(Colors.white),
+                                  MaterialStatePropertyAll(Colors.blue),
                               foregroundColor:
-                                  isLoginHover ? const MaterialStatePropertyAll(Colors.white) : const MaterialStatePropertyAll(Colors.blue),
-                              minimumSize: const MaterialStatePropertyAll(Size(
+                                  MaterialStatePropertyAll(Colors.white),
+                              minimumSize: MaterialStatePropertyAll(Size(
                                   150 /*MediaQuery.of(context).size.width / 2*/,
                                   40)),
-                              side: const MaterialStatePropertyAll(BorderSide(
+                              side: MaterialStatePropertyAll(BorderSide(
                                   color: Colors.blueGrey,
                                   style: BorderStyle.solid,
                                   width: 2))),
-                          child: const Text("Login"),
+                          child: const Text(
+                            "Login",
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
                         ),
                         const SizedBox(
                           width: 5,
@@ -150,20 +146,13 @@ class Login extends State<LoginState> {
                                 MaterialPageRoute(
                                     builder: (context) => SignUp()));
                           },
-                          onHover: (value) {
-                            setState(() {
-                              if (isSignUpHover) {
-                              isSignUpHover = false;
-                            } else {
-                              isSignUpHover = true;
-                            }
-                            });
-                          },
-                          style: ButtonStyle(
-                              backgroundColor:
-                                  isSignUpHover ? const MaterialStatePropertyAll(Colors.blue) : const MaterialStatePropertyAll(Colors.white),
+                          style: const ButtonStyle(
+                              overlayColor:
+                                  MaterialStatePropertyAll(Colors.yellow),
+                              backgroundColor: const MaterialStatePropertyAll(
+                                  Colors.yellowAccent),
                               foregroundColor:
-                                  isSignUpHover ? const MaterialStatePropertyAll(Colors.white) : const MaterialStatePropertyAll(Colors.blue),
+                                  MaterialStatePropertyAll(Colors.purple),
                               minimumSize: const MaterialStatePropertyAll(Size(
                                   150 /*MediaQuery.of(context).size.width / 2*/,
                                   40)),
@@ -171,7 +160,10 @@ class Login extends State<LoginState> {
                                   color: Colors.blueGrey,
                                   style: BorderStyle.solid,
                                   width: 2))),
-                          child: const Text("Sign Up"),
+                          child: const Text(
+                            "Sign Up",
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
                         ),
                       ],
                     )),
@@ -189,20 +181,20 @@ class Login extends State<LoginState> {
                             },
                             onHover: (value) {
                               setState(() {
-                              if (isMobileHover) {
-                              isMobileHover = false;
-                            } else {
-                              isMobileHover = true;
-                            }
-                            });
+                                if (isMobileHover) {
+                                  isMobileHover = false;
+                                } else {
+                                  isMobileHover = true;
+                                }
+                              });
                             },
                             style: ButtonStyle(
-                                backgroundColor: isMobileHover ? const MaterialStatePropertyAll(
-                                    Colors.orange) : const MaterialStatePropertyAll(
-                                    Colors.white),
-                                foregroundColor: isMobileHover ? const MaterialStatePropertyAll(
-                                    Colors.white) : const MaterialStatePropertyAll(
-                                    Colors.orange),
+                                overlayColor:
+                                    const MaterialStatePropertyAll(Colors.purple),
+                                backgroundColor: const MaterialStatePropertyAll(
+                                    Colors.pink),
+                                foregroundColor: const MaterialStatePropertyAll(
+                                    Colors.orangeAccent),
                                 minimumSize: MaterialStateProperty.all(const Size(
                                     300 /*MediaQuery.of(context).size.width / 2*/,
                                     40)),
