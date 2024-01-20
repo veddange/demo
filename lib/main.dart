@@ -1,4 +1,5 @@
 import 'package:demo/Authentication/login.dart';
+import 'package:demo/navigation%20drawer/navigation_drawer.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -45,7 +46,7 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      drawer: const NavigationDrawer(),
+      drawer: const NavState(),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -79,98 +80,4 @@ class _MyHomePageState extends State<MyHomePage> {
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
-}
-
-// void
-
-class NavigationDrawer extends StatelessWidget {
-  const NavigationDrawer({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) => Drawer(
-        surfaceTintColor: Colors.black,
-        backgroundColor: Colors.lightGreen,
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: <Widget>[buildHearder(context), buildMenuItems(context)],
-          ),
-        ),
-      );
-
-  Widget buildHearder(BuildContext context) => Container(
-        padding: EdgeInsets.only(
-          top: MediaQuery.of(context).padding.top + 50,
-        ),
-      );
-  Widget buildMenuItems(BuildContext context) => Column(
-        children: [
-          ListTile(
-            selectedTileColor: Colors.amberAccent,
-            selectedColor: Colors.white,
-            leading: const Icon(Icons.home_outlined),
-            title: const Text("Home"),
-            onTap: () {
-              Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (context) => const MyApp()));
-            },
-          ),
-          ListTile(
-            leading: const Icon(Icons.person),
-            title: const Text("Profile"),
-            onTap: () {},
-          ),
-          ListTile(
-            leading: const Icon(Icons.dock_outlined),
-            title: const Text("To Do List"),
-            onTap: () {},
-          ),
-          ListTile(
-            leading: const Icon(Icons.notifications),
-            title: const Text("Notification"),
-            onTap: () {},
-          ),
-          ListTile(
-            leading: const Icon(Icons.privacy_tip),
-            title: const Text("Privacy Policy"),
-            onTap: () {},
-          ),
-          ListTile(
-            leading: const Icon(Icons.feedback),
-            title: const Text("Feedback"),
-            onTap: () {},
-          ),
-          ListTile(
-            leading: const Icon(Icons.help),
-            title: const Text("Help"),
-            onTap: () {},
-          ),
-          ListTile(
-            leading: const Icon(Icons.question_answer),
-            title: const Text("FAQ"),
-            onTap: () {},
-          ),
-          ListTile(
-            leading: const Icon(Icons.info),
-            title: const Text("About Us"),
-            onTap: () {},
-          ),
-          SizedBox(
-            height: MediaQuery.of(context).size.height / 3 + 90,
-          ),
-          OutlinedButton(
-              onPressed: () {},
-              style: const ButtonStyle(
-                  backgroundColor: MaterialStatePropertyAll(Colors.white),
-                  overlayColor: MaterialStatePropertyAll(Colors.blue),
-                  fixedSize: MaterialStatePropertyAll(Size(280, 35)),
-                  foregroundColor: MaterialStatePropertyAll(Colors.blue),
-                  side:
-                      MaterialStatePropertyAll(BorderSide(color: Colors.blue))),
-              child: const Text("Logout")),
-          const SizedBox(
-            height: 10,
-          )
-        ],
-      );
 }
