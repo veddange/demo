@@ -1,4 +1,6 @@
-import "package:demo/Authentication/otp.dart";
+import "package:demo/Screens/about_us.dart";
+import "package:demo/Screens/profileview.dart";
+import "package:demo/main.dart";
 import "package:flutter/material.dart";
 
 class NavState extends StatefulWidget {
@@ -48,10 +50,10 @@ class NavigationDrawe extends State<NavState> {
             leading: const Icon(Icons.person),
             title: const Text("Profile"),
             onTap: () {
-              Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) => const OtpState()));
               setState(() {
                 index = 1;
+              Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => const Profile()));
               });
             },
             selected: index == 1,
@@ -71,10 +73,10 @@ class NavigationDrawe extends State<NavState> {
             leading: const Icon(Icons.notifications),
             title: const Text("Notification"),
             onTap: () {
-              // Navigator.of(context)
-              //     .push(MaterialPageRoute(builder: (context) => const MyApp()));
               setState(() {
                 index = 3;
+                Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (context) => const MyApp()));
               });
             },
             selected: index == 3,
@@ -126,6 +128,8 @@ class NavigationDrawe extends State<NavState> {
               onTap: () {
                 setState(() {
                   index = 8;
+                  Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => const AboutUs()));
                 });
               },
               selected: index == 8,
