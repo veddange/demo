@@ -1,9 +1,10 @@
 import 'package:demo/Authentication/login.dart';
+import 'package:demo/Screens/profileview.dart';
 import 'package:demo/navigation%20drawer/navigation_drawer.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const Profile());
 }
 
 var isHover = false;
@@ -46,7 +47,7 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      drawer: const NavState(),
+      drawer: NavState(index: 0,),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

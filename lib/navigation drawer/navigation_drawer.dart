@@ -3,16 +3,18 @@ import "package:demo/Screens/profileview.dart";
 import "package:demo/main.dart";
 import "package:flutter/material.dart";
 
+// ignore: must_be_immutable
 class NavState extends StatefulWidget {
-  const NavState({super.key});
+  NavState({super.key, required this.index});
+  int index;
 
   @override
-  NavigationDrawe createState() => NavigationDrawe();
+  State<NavState> createState() => NavigationDrawe();
 }
 
 // ignore: must_be_immutable
 class NavigationDrawe extends State<NavState> {
-  int index = 0;
+  // int widget.index = .widget.index;
   // NavigationDrawer({Key? key}) : super(key: key);
 
   @override
@@ -40,10 +42,12 @@ class NavigationDrawe extends State<NavState> {
             title: const Text("Home"),
             onTap: () {
               setState(() {
-                index = 0;
+                widget.index = 0;
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => const MyApp()));
               });
             },
-            selected: index == 0,
+            selected: widget.index == 0,
             selectedTileColor: Colors.orange,
           ),
           ListTile(
@@ -51,12 +55,12 @@ class NavigationDrawe extends State<NavState> {
             title: const Text("Profile"),
             onTap: () {
               setState(() {
-                index = 1;
-              Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) => const Profile()));
+                widget.index = 1;
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => const Profile()));
               });
             },
-            selected: index == 1,
+            selected: widget.index == 1,
             selectedTileColor: Colors.orange,
           ),
           ListTile(
@@ -64,22 +68,22 @@ class NavigationDrawe extends State<NavState> {
               title: const Text("To Do List"),
               onTap: () {
                 setState(() {
-                  index = 2;
+                  widget.index = 2;
                 });
               },
-              selected: index == 2,
+              selected: widget.index == 2,
               selectedTileColor: Colors.orange),
           ListTile(
             leading: const Icon(Icons.notifications),
             title: const Text("Notification"),
             onTap: () {
               setState(() {
-                index = 3;
-                Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (context) => const MyApp()));
+                widget.index = 3;
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => const MyApp()));
               });
             },
-            selected: index == 3,
+            selected: widget.index == 3,
             selectedTileColor: Colors.orange,
           ),
           ListTile(
@@ -87,52 +91,52 @@ class NavigationDrawe extends State<NavState> {
               title: const Text("Privacy Policy"),
               onTap: () {
                 setState(() {
-                  index = 4;
+                  widget.index = 4;
                 });
               },
-              selected: index == 4,
+              selected: widget.index == 4,
               selectedTileColor: Colors.orange),
           ListTile(
               leading: const Icon(Icons.feedback),
               title: const Text("Feedback"),
               onTap: () {
                 setState(() {
-                  index = 5;
+                  widget.index = 5;
                 });
               },
-              selected: index == 5,
+              selected: widget.index == 5,
               selectedTileColor: Colors.orange),
           ListTile(
               leading: const Icon(Icons.help),
               title: const Text("Help"),
               onTap: () {
                 setState(() {
-                  index = 6;
+                  widget.index = 6;
                 });
               },
-              selected: index == 6,
+              selected: widget.index == 6,
               selectedTileColor: Colors.orange),
           ListTile(
               leading: const Icon(Icons.question_answer),
               title: const Text("FAQ"),
               onTap: () {
                 setState(() {
-                  index = 7;
+                  widget.index = 7;
                 });
               },
-              selected: index == 7,
+              selected: widget.index == 7,
               selectedTileColor: Colors.orange),
           ListTile(
               leading: const Icon(Icons.info),
               title: const Text("About Us"),
               onTap: () {
                 setState(() {
-                  index = 8;
+                  widget.index = 8;
                   Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) => const AboutUs()));
+                      MaterialPageRoute(builder: (context) => const AboutUs()));
                 });
               },
-              selected: index == 8,
+              selected: widget.index == 8,
               selectedTileColor: Colors.orange),
           SizedBox(
             height: MediaQuery.of(context).size.height / 3 + 90,

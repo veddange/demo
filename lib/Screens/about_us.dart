@@ -1,3 +1,4 @@
+import "package:demo/navigation%20drawer/navigation_drawer.dart";
 import "package:flutter/material.dart";
 
 class AboutUs extends StatefulWidget {
@@ -15,11 +16,14 @@ class AboutUsView extends State<AboutUs> {
       home: Scaffold(
         appBar: AppBar(
           title: const Text("About Us"),
-          leading:  BackButton(
-            onPressed: () {
-              Navigator.of(context).pop();
-            },
-            color: Colors.black),
+        ),
+        drawer: NavState(index: 8),
+        body: const SingleChildScrollView (
+          child: Column(
+            children: [
+             
+            ],
+          ),
         ),
       ),
     );
