@@ -1,4 +1,5 @@
 import "package:demo/Screens/about_us.dart";
+import "package:demo/Screens/feedback.dart";
 import "package:demo/Screens/profileview.dart";
 import "package:demo/main.dart";
 import "package:flutter/material.dart";
@@ -102,6 +103,8 @@ class NavigationDrawe extends State<NavState> {
               onTap: () {
                 setState(() {
                   widget.index = 5;
+                  Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => const FeedBack()));
                 });
               },
               selected: widget.index == 5,

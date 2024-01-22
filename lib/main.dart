@@ -1,10 +1,9 @@
 import 'package:demo/Authentication/login.dart';
-import 'package:demo/Screens/profileview.dart';
 import 'package:demo/navigation%20drawer/navigation_drawer.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const Profile());
+  runApp(const MyApp());
 }
 
 var isHover = false;

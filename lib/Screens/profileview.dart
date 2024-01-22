@@ -32,17 +32,6 @@ class ProfileView extends State<Profile> {
             child: Column(
               children: [
                 const SizedBox(
-                  width: 300,
-                  child: Text(
-                    "User Profile",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 28),
-                  ),
-                ),
-                const SizedBox(
                   height: 20,
                 ),
                 const SizedBox(
@@ -130,9 +119,6 @@ class ProfileView extends State<Profile> {
                     obscureText: true,
                     decoration: const InputDecoration(hintText: "Enter Password"),
                   ),
-                ),
-                const SizedBox(
-                  height: 20,
                 ),
                 const SizedBox(
                   height: 20,
