@@ -1,6 +1,8 @@
-import "package:demo/Screens/about_us.dart";
-import "package:demo/Screens/feedback.dart";
-import "package:demo/Screens/profileview.dart";
+import 'package:demo/Navigation%20Drawer%20Screens/about_us.dart';
+import 'package:demo/Navigation%20Drawer%20Screens/feedback.dart';
+import 'package:demo/Navigation%20Drawer%20Screens/notification.dart';
+import 'package:demo/Navigation%20Drawer%20Screens/profileview.dart';
+import 'package:demo/Navigation%20Drawer%20Screens/todolist.dart';
 import "package:demo/main.dart";
 import "package:flutter/material.dart";
 
@@ -70,6 +72,8 @@ class NavigationDrawe extends State<NavState> {
               onTap: () {
                 setState(() {
                   widget.index = 2;
+                  Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => const TodoList()));
                 });
               },
               selected: widget.index == 2,
@@ -81,7 +85,7 @@ class NavigationDrawe extends State<NavState> {
               setState(() {
                 widget.index = 3;
                 Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => const MyApp()));
+                    MaterialPageRoute(builder: (context) => const CustomNotification()));
               });
             },
             selected: widget.index == 3,
