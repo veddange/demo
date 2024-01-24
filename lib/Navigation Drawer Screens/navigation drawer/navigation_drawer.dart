@@ -1,6 +1,9 @@
 import 'package:demo/Navigation%20Drawer%20Screens/about_us.dart';
+import 'package:demo/Navigation%20Drawer%20Screens/faq.dart';
 import 'package:demo/Navigation%20Drawer%20Screens/feedback.dart';
+import 'package:demo/Navigation%20Drawer%20Screens/help.dart';
 import 'package:demo/Navigation%20Drawer%20Screens/notification.dart';
+import 'package:demo/Navigation%20Drawer%20Screens/privacypolicy.dart';
 import 'package:demo/Navigation%20Drawer%20Screens/profileview.dart';
 import 'package:demo/Navigation%20Drawer%20Screens/todolist.dart';
 import "package:demo/main.dart";
@@ -40,7 +43,6 @@ class NavigationDrawe extends State<NavState> {
   Widget buildMenuItems(BuildContext context) => Column(
         children: [
           ListTile(
-            hoverColor: Colors.brown,
             leading: const Icon(Icons.home_outlined),
             title: const Text("Home"),
             onTap: () {
@@ -51,6 +53,7 @@ class NavigationDrawe extends State<NavState> {
               });
             },
             selected: widget.index == 0,
+            selectedColor: Colors.white,
             selectedTileColor: Colors.orange,
           ),
           ListTile(
@@ -64,6 +67,7 @@ class NavigationDrawe extends State<NavState> {
               });
             },
             selected: widget.index == 1,
+            selectedColor: Colors.white,
             selectedTileColor: Colors.orange,
           ),
           ListTile(
@@ -77,6 +81,7 @@ class NavigationDrawe extends State<NavState> {
                 });
               },
               selected: widget.index == 2,
+              selectedColor: Colors.white,
               selectedTileColor: Colors.orange),
           ListTile(
             leading: const Icon(Icons.notifications),
@@ -89,6 +94,7 @@ class NavigationDrawe extends State<NavState> {
               });
             },
             selected: widget.index == 3,
+            selectedColor: Colors.white,
             selectedTileColor: Colors.orange,
           ),
           ListTile(
@@ -97,9 +103,12 @@ class NavigationDrawe extends State<NavState> {
               onTap: () {
                 setState(() {
                   widget.index = 4;
+                  Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => const PrivacyPolicy()));
                 });
               },
               selected: widget.index == 4,
+              selectedColor: Colors.white,
               selectedTileColor: Colors.orange),
           ListTile(
               leading: const Icon(Icons.feedback),
@@ -112,6 +121,7 @@ class NavigationDrawe extends State<NavState> {
                 });
               },
               selected: widget.index == 5,
+              selectedColor: Colors.white,
               selectedTileColor: Colors.orange),
           ListTile(
               leading: const Icon(Icons.help),
@@ -119,9 +129,12 @@ class NavigationDrawe extends State<NavState> {
               onTap: () {
                 setState(() {
                   widget.index = 6;
+                  Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => const Help()));
                 });
               },
               selected: widget.index == 6,
+              selectedColor: Colors.white,
               selectedTileColor: Colors.orange),
           ListTile(
               leading: const Icon(Icons.question_answer),
@@ -129,9 +142,12 @@ class NavigationDrawe extends State<NavState> {
               onTap: () {
                 setState(() {
                   widget.index = 7;
+                  Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => const FAQ()));
                 });
               },
               selected: widget.index == 7,
+              selectedColor: Colors.white,
               selectedTileColor: Colors.orange),
           ListTile(
               leading: const Icon(Icons.info),
@@ -144,6 +160,7 @@ class NavigationDrawe extends State<NavState> {
                 });
               },
               selected: widget.index == 8,
+              selectedColor: Colors.white,
               selectedTileColor: Colors.orange),
           SizedBox(
             height: MediaQuery.of(context).size.height / 3 + 90,
