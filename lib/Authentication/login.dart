@@ -146,13 +146,13 @@ class Login extends State<LoginState> {
                                 MaterialPageRoute(
                                     builder: (context) => SignUp()));
                           },
-                          style: const ButtonStyle(
+                          style:  ButtonStyle(
                               overlayColor:
-                                  MaterialStatePropertyAll(Colors.yellow),
-                              backgroundColor: const MaterialStatePropertyAll(
-                                  Colors.yellowAccent),
+                                  const MaterialStatePropertyAll(Colors.yellow),
+                              backgroundColor:  MaterialStatePropertyAll(
+                                  Colors.blueGrey[400]),
                               foregroundColor:
-                                  MaterialStatePropertyAll(Colors.purple),
+                                  const MaterialStatePropertyAll(Colors.white),
                               minimumSize: const MaterialStatePropertyAll(Size(
                                   150 /*MediaQuery.of(context).size.width / 2*/,
                                   40)),
@@ -191,10 +191,10 @@ class Login extends State<LoginState> {
                             style: ButtonStyle(
                                 overlayColor:
                                     const MaterialStatePropertyAll(Colors.purple),
-                                backgroundColor: const MaterialStatePropertyAll(
-                                    Colors.pink),
+                                backgroundColor:  MaterialStatePropertyAll(
+                                    Colors.purple[300]),
                                 foregroundColor: const MaterialStatePropertyAll(
-                                    Colors.orangeAccent),
+                                    Colors.white),
                                 minimumSize: MaterialStateProperty.all(const Size(
                                     300 /*MediaQuery.of(context).size.width / 2*/,
                                     40)),
