@@ -1,0 +1,267 @@
+Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                const SizedBox(
+                                  width: 20,
+                                ),
+                                IconButton(
+                                    iconSize: 60,
+                                    color: const Color.fromARGB(
+                                        255, 146, 119, 197),
+                                    onPressed: () {},
+                                    icon: const Icon(Icons.collections_sharp)),
+                                  const SizedBox(
+                                  width: 30,
+                                ),
+                                IconButton(
+                                    iconSize: 60,
+                                    color: const Color.fromARGB(
+                                        255, 146, 119, 197),
+                                    onPressed: () {},
+                                    icon: const Icon(Icons.add_location_sharp)),
+                                const SizedBox(
+                                  width: 30,
+                                ),
+                                IconButton(
+                                    iconSize: 60,
+                                    color: const Color.fromARGB(
+                                        255, 146, 119, 197),
+                                    onPressed: () {},
+                                    icon: const Icon(Icons.local_airport)),
+                                const SizedBox(
+                                  width: 20,
+                                ),
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                const SizedBox(
+                                  width: 20,
+                                ),
+                                IconButton(
+                                    iconSize: 60,
+                                    color: const Color.fromARGB(
+                                        255, 146, 119, 197),
+                                    onPressed: () {},
+                                    icon: const Icon(
+                                        Icons.health_and_safety_sharp)),
+                                const SizedBox(
+                                  width: 30,
+                                ),
+                                IconButton(
+                                    iconSize: 60,
+                                    color: const Color.fromARGB(
+                                        255, 146, 119, 197),
+                                    onPressed: () {},
+                                    icon: const Icon(Icons.radio)),
+                                const SizedBox(
+                                  width: 30,
+                                ),
+                                IconButton(
+                                    iconSize: 60,
+                                    color: const Color.fromARGB(
+                                        255, 146, 119, 197),
+                                    onPressed: () {},
+                                    icon: const Icon(Icons.music_note)),
+                                const SizedBox(
+                                  width: 20,
+                                ),
+                              ],
+                            ),
+
+--------------------------------------------------------------------------------------------------------------------
+
+
+Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        children: [
+                          Row(
+                            children: [
+                              IconButton(
+                                  iconSize: 60,
+                                  color:
+                                      const Color.fromARGB(255, 146, 119, 197),
+                                  onPressed: () {},
+                                  icon: const Icon(
+                                      Icons.featured_play_list_rounded)),
+                              const SizedBox(
+                                width: 30,
+                              ),
+                              IconButton(
+                                  iconSize: 60,
+                                  color:
+                                      const Color.fromARGB(255, 146, 119, 197),
+                                  onPressed: () {},
+                                  icon: const Icon(
+                                      Icons.featured_play_list_rounded)),
+                              const SizedBox(
+                                width: 30,
+                              ),
+                              IconButton(
+                                  iconSize: 60,
+                                  color:
+                                      const Color.fromARGB(255, 146, 119, 197),
+                                  onPressed: () {},
+                                  icon: const Icon(
+                                      Icons.featured_play_list_rounded)),
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              IconButton(
+                                  iconSize: 60,
+                                  color:
+                                      const Color.fromARGB(255, 146, 119, 197),
+                                  onPressed: () {},
+                                  icon: const Icon(
+                                      Icons.featured_play_list_rounded)),
+                              const SizedBox(
+                                width: 30,
+                              ),
+                              IconButton(
+                                  iconSize: 60,
+                                  color:
+                                      const Color.fromARGB(255, 146, 119, 197),
+                                  onPressed: () {},
+                                  icon: const Icon(
+                                      Icons.featured_play_list_rounded)),
+                              const SizedBox(
+                                width: 30,
+                              ),
+                              IconButton(
+                                  iconSize: 60,
+                                  color:
+                                      const Color.fromARGB(255, 146, 119, 197),
+                                  onPressed: () {},
+                                  icon: const Icon(
+                                      Icons.featured_play_list_rounded)),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Container(
+                        decoration: BoxDecoration(
+                            borderRadius:
+                                const BorderRadius.all(Radius.circular(10)),
+                            color: Colors.white,
+                            shape: BoxShape.rectangle,
+                            border:
+                                Border.all(color: Colors.black, width: 2.0)),
+                        child: Column(
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                const SizedBox(
+                                  width: 20,
+                                ),
+                                IconButton(
+                                    iconSize: 60,
+                                    color: const Color.fromARGB(
+                                        255, 146, 119, 197),
+                                    onPressed: () {},
+                                    icon: const Icon(
+                                        Icons.featured_play_list_rounded)),
+                                const SizedBox(
+                                  width: 30,
+                                ),
+                                IconButton(
+                                    iconSize: 60,
+                                    color: const Color.fromARGB(
+                                        255, 146, 119, 197),
+                                    onPressed: () {},
+                                    icon: const Icon(Icons.ramen_dining_sharp)),
+                                const SizedBox(
+                                  width: 30,
+                                ),
+                                IconButton(
+                                    iconSize: 60,
+                                    color: const Color.fromARGB(
+                                        255, 146, 119, 197),
+                                    onPressed: () {},
+                                    icon: const Icon(Icons.yard_rounded)),
+                                const SizedBox(
+                                  width: 20,
+                                ),
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                const SizedBox(
+                                  width: 20,
+                                ),
+                                IconButton(
+                                    iconSize: 60,
+                                    color: const Color.fromARGB(
+                                        255, 146, 119, 197),
+                                    onPressed: () {},
+                                    icon: const Icon(
+                                        Icons.data_exploration_rounded)),
+                                const SizedBox(
+                                  width: 30,
+                                ),
+                                IconButton(
+                                    iconSize: 60,
+                                    color: const Color.fromARGB(
+                                        255, 146, 119, 197),
+                                    onPressed: () {},
+                                    icon: const Icon(Icons.gpp_good_rounded)),
+                                const SizedBox(
+                                  width: 30,
+                                ),
+                                IconButton(
+                                    iconSize: 60,
+                                    color: const Color.fromARGB(
+                                        255, 146, 119, 197),
+                                    onPressed: () {},
+                                    icon: const Icon(Icons.headphones_sharp)),
+                                const SizedBox(
+                                  width: 20,
+                                ),
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                const SizedBox(
+                                  width: 20,
+                                ),
+                                IconButton(
+                                    iconSize: 60,
+                                    color: const Color.fromARGB(
+                                        255, 146, 119, 197),
+                                    onPressed: () {},
+                                    icon: const Icon(Icons.kayaking_outlined)),
+                                const SizedBox(
+                                  width: 10,
+                                ),
+                                IconButton(
+                                    iconSize: 60,
+                                    color: const Color.fromARGB(
+                                        255, 146, 119, 197),
+                                    onPressed: () {},
+                                    icon: const Icon(Icons.language_outlined)),
+                                const SizedBox(
+                                  width: 30,
+                                ),
+                                IconButton(
+                                    iconSize: 60,
+                                    color: const Color.fromARGB(
+                                        255, 146, 119, 197),
+                                    onPressed: () {},
+                                    icon: const Icon(Icons.folder_zip)),
+                                const SizedBox(
+                                  width: 20,
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),

@@ -42,6 +42,44 @@ class NavigationDrawe extends State<NavState> {
       );
   Widget buildMenuItems(BuildContext context) => Column(
         children: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              children: [
+                const SizedBox(
+                  // width: 50,
+                  child: Icon(
+                    Icons.account_circle_outlined,
+                    size: 50,
+                    color: Colors.white,
+                  ),
+                ),
+            
+                SizedBox(
+                  width: 200,
+                  child: TextButton (
+                    style: const ButtonStyle(
+                      foregroundColor: MaterialStatePropertyAll(Colors.white),
+                      alignment: Alignment.centerLeft
+                    ),
+                    onPressed: () {}, 
+                    child:  const Text(
+                      "Login",
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold
+                      ),
+                      textAlign: TextAlign.left,  
+                    )
+                  ),
+                ),
+                const Spacer()
+              ],
+            ),
+          ),
+          const SizedBox(
+            height: 10,
+          ),
           ListTile(
             leading: const Icon(Icons.home_outlined),
             title: const Text("Home"),
@@ -76,8 +114,8 @@ class NavigationDrawe extends State<NavState> {
               onTap: () {
                 setState(() {
                   widget.index = 2;
-                  Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => const TodoList()));
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const TodoList()));
                 });
               },
               selected: widget.index == 2,
@@ -89,8 +127,8 @@ class NavigationDrawe extends State<NavState> {
             onTap: () {
               setState(() {
                 widget.index = 3;
-                Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => const CustomNotification()));
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const CustomNotification()));
               });
             },
             selected: widget.index == 3,
@@ -103,8 +141,8 @@ class NavigationDrawe extends State<NavState> {
               onTap: () {
                 setState(() {
                   widget.index = 4;
-                  Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => const PrivacyPolicy()));
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const PrivacyPolicy()));
                 });
               },
               selected: widget.index == 4,
@@ -116,8 +154,8 @@ class NavigationDrawe extends State<NavState> {
               onTap: () {
                 setState(() {
                   widget.index = 5;
-                  Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => const FeedBack()));
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const FeedBack()));
                 });
               },
               selected: widget.index == 5,
@@ -130,7 +168,7 @@ class NavigationDrawe extends State<NavState> {
                 setState(() {
                   widget.index = 6;
                   Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => const Help()));
+                      MaterialPageRoute(builder: (context) => const Help()));
                 });
               },
               selected: widget.index == 6,
@@ -143,7 +181,7 @@ class NavigationDrawe extends State<NavState> {
                 setState(() {
                   widget.index = 7;
                   Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => const FAQ()));
+                      MaterialPageRoute(builder: (context) => const FAQ()));
                 });
               },
               selected: widget.index == 7,

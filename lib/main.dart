@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Home'),
+      home: const MyHomePage(title: 'Buykart'),
     );
   }
 }
@@ -35,7 +35,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  
   // void _incrementCounter() {
   //   setState(() {});
   // }
@@ -52,14 +51,26 @@ class _MyHomePageState extends State<MyHomePage> {
         index: 0,
       ),
       body: Center(
-        child: SingleChildScrollView (
+        child: SingleChildScrollView(
           child: Column(
             children: <Widget>[
-              const Text(""),
-              SingleChildScrollView (
+              const SizedBox(
+                height: 20,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 8.0, right: 8.0),
+                child: SizedBox(
+                  width: MediaQuery.of(context).size.width,
+                  child: const Text(
+                    "Quick Picks",
+                    textAlign: TextAlign.left,
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ),
+              SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Column(
                       children: [
@@ -67,9 +78,12 @@ class _MyHomePageState extends State<MyHomePage> {
                             iconSize: 50,
                             onPressed: () {},
                             color: const Color.fromARGB(255, 146, 119, 197),
-                            icon: const Icon(Icons.category)),
+                            icon: const Icon(Icons.dashboard)),
                         const Text("Category")
                       ],
+                    ),
+                    const SizedBox(
+                      width: 10,
                     ),
                     Column(
                       children: [
@@ -81,6 +95,9 @@ class _MyHomePageState extends State<MyHomePage> {
                         const Text("Store")
                       ],
                     ),
+                    const SizedBox(
+                      width: 10,
+                    ),
                     Column(
                       children: [
                         IconButton(
@@ -91,6 +108,9 @@ class _MyHomePageState extends State<MyHomePage> {
                         const Text("Grocery")
                       ],
                     ),
+                    const SizedBox(
+                      width: 10,
+                    ),
                     Column(
                       children: [
                         IconButton(
@@ -100,6 +120,9 @@ class _MyHomePageState extends State<MyHomePage> {
                             icon: const Icon(Icons.mobile_screen_share)),
                         const Text("Mobile")
                       ],
+                    ),
+                    const SizedBox(
+                      width: 10,
                     ),
                     Column(
                       children: [
@@ -118,235 +141,458 @@ class _MyHomePageState extends State<MyHomePage> {
                 height: 20,
               ),
               SizedBox(
-                width: 400,
-                // height: 250,
                 child: Image.asset(
                   'assets/whiteSlide.png',
-                  fit: BoxFit.fill,
+                  fit: BoxFit.fitWidth,
                 ),
               ),
               const SizedBox(
                 height: 20,
               ),
-              SingleChildScrollView (
-                scrollDirection: Axis.horizontal,
-                child: Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                        decoration: BoxDecoration(
-                          borderRadius: const BorderRadius.all(Radius.circular(10)),
-                          color: Colors.white,
-                          shape: BoxShape.rectangle,
-                          border: Border.all(
-                            color: Colors.black,
-                            width: 2.0
-                          )
-                        ),
-                        child: Column(
+              Column(
+                children: [
+                  Container(
+                    height: 400,
+                    width: MediaQuery.of(context).size.width,
+                    decoration: BoxDecoration(
+                      color: Colors.blue.shade100,
+                      shape: BoxShape.rectangle,
+                    ),
+                    child: Column(
+                      children: [
+                        Row(
                           children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                const SizedBox(
-                                  width: 10,
-                                ),
-                                IconButton(
-                                    iconSize: 60,
-                                    color: const Color.fromARGB(255, 146, 119, 197),
-                                    onPressed: () {},
-                                    icon: const Icon(Icons.collections_sharp)),
-                                const SizedBox(
-                                  width: 30,
-                                ),
-                                IconButton(
-                                    iconSize: 60,
-                                    color: const Color.fromARGB(255, 146, 119, 197),
-                                    onPressed: () {},
-                                    icon: const Icon(Icons.add_location_sharp)),
-                                const SizedBox(
-                                  width: 30,
-                                ),
-                                IconButton(
-                                    iconSize: 60,
-                                    color: const Color.fromARGB(255, 146, 119, 197),
-                                    onPressed: () {},
-                                    icon: const Icon(Icons.local_airport)),
-                                const SizedBox(
-                                  width: 10,
-                                ),
-                              ],
+                            const SizedBox(
+                              width: 10,
+                            ),
+                            const Text(
+                              "You may like this",
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                            SizedBox(
+                              width: MediaQuery.of(context).size.width - 205,
                             ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
+                                const Text(
+                                  "See all",
+                                  style: TextStyle(color: Colors.blue),
+                                ),
                                 const SizedBox(
-                                  width: 10,
+                                  width: 1,
                                 ),
                                 IconButton(
-                                    iconSize: 60,
-                                    color: const Color.fromARGB(255, 146, 119, 197),
+                                    color: Colors.blue,
                                     onPressed: () {},
-                                    icon: const Icon(Icons.health_and_safety_sharp)),
-                                const SizedBox(
-                                  width: 30,
-                                ),
-                                IconButton(
-                                    iconSize: 60,
-                                    color: const Color.fromARGB(255, 146, 119, 197),
-                                    onPressed: () {},
-                                    icon: const Icon(Icons.radio)),
-                                const SizedBox(
-                                  width: 30,
-                                ),
-                                IconButton(
-                                    iconSize: 60,
-                                    color: const Color.fromARGB(255, 146, 119, 197),
-                                    onPressed: () {},
-                                    icon: const Icon(Icons.music_note)),
-                                const SizedBox(
-                                  width: 30,
-                                ),
+                                    icon: const Icon(
+                                        Icons.keyboard_arrow_right_sharp)),
                               ],
                             )
                           ],
                         ),
+                        SingleChildScrollView(
+                          scrollDirection: Axis.horizontal,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Row(
+                                  children: [
+                                    const SizedBox(
+                                      width: 10,
+                                    ),
+                                    Container(
+                                      width: 150,
+                                      height: 155,
+                                      color: Colors.grey.shade100,
+                                      child: Column(
+                                        children: [
+                                          IconButton(
+                                              alignment: Alignment.center,
+                                              iconSize: 100,
+                                              color: const Color.fromARGB(
+                                                  255, 146, 119, 197),
+                                              onPressed: () {},
+                                              icon: const Icon(
+                                                  Icons.collections_sharp)),
+                                          const Text("Text")
+                                        ],
+                                      ),
+                                    ),
+                                    const SizedBox(
+                                      width: 30,
+                                    ),
+                                    Container(
+                                      width: 150,
+                                      height: 155,
+                                      color: Colors.grey.shade100,
+                                      child: Column(
+                                        children: [
+                                          IconButton(
+                                              alignment: Alignment.center,
+                                              iconSize: 100,
+                                              color: const Color.fromARGB(
+                                                  255, 146, 119, 197),
+                                              onPressed: () {},
+                                              icon: const Icon(
+                                                  Icons.collections_sharp)),
+                                          const Text("Text")
+                                        ],
+                                      ),
+                                    ),
+                                    const SizedBox(
+                                      width: 10,
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Row(
+                                  children: [
+                                    const SizedBox(
+                                      width: 10,
+                                    ),
+                                    Container(
+                                      width: 150,
+                                      height: 155,
+                                      color: Colors.grey.shade100,
+                                      child: Column(
+                                        children: [
+                                          IconButton(
+                                              alignment: Alignment.center,
+                                              iconSize: 100,
+                                              color: const Color.fromARGB(
+                                                  255, 146, 119, 197),
+                                              onPressed: () {},
+                                              icon: const Icon(
+                                                  Icons.collections_sharp)),
+                                          const Text("Text")
+                                        ],
+                                      ),
+                                    ),
+                                    const SizedBox(
+                                      width: 30,
+                                    ),
+                                    Container(
+                                      width: 150,
+                                      height: 155,
+                                      color: Colors.grey.shade100,
+                                      child: Column(
+                                        children: [
+                                          IconButton(
+                                              alignment: Alignment.center,
+                                              iconSize: 100,
+                                              color: const Color.fromARGB(
+                                                  255, 146, 119, 197),
+                                              onPressed: () {},
+                                              icon: const Icon(
+                                                  Icons.collections_sharp)),
+                                          const Text("Text")
+                                        ],
+                                      ),
+                                    ),
+                                    const SizedBox(
+                                      width: 10,
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(8, 8, 0, 8),
+                    child: Container(
+                      height: 250,
+                      width: MediaQuery.of(context).size.width,
+                      decoration: const BoxDecoration(
+                        color: Colors.white,
+                        shape: BoxShape.rectangle,
+                      ),
+                      child: Column(
+                        children: [
+                          Row(
+                            children: [
+                              const SizedBox(
+                                width: 10,
+                              ),
+                              const Text(
+                                "Trending",
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                              SizedBox(
+                                width: MediaQuery.of(context).size.width - 160,
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  const Text(
+                                    "See all",
+                                    style: TextStyle(color: Colors.blue),
+                                  ),
+                                  const SizedBox(
+                                    width: 1,
+                                  ),
+                                  IconButton(
+                                      color: Colors.blue,
+                                      onPressed: () {},
+                                      icon: const Icon(
+                                          Icons.keyboard_arrow_right_sharp)),
+                                ],
+                              )
+                            ],
+                          ),
+                          SingleChildScrollView(
+                            scrollDirection: Axis.horizontal,
+                            child: Column(
+                              children: [
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.fromLTRB(8, 8, 0, 3),
+                                  child: SingleChildScrollView(
+                                    scrollDirection: Axis.horizontal,
+                                    child: Row(
+                                      children: [
+                                        Container(
+                                          width: 80,
+                                          height: 90,
+                                          color: Colors.grey.shade100,
+                                          child: Column(
+                                            children: [
+                                              IconButton(
+                                                  alignment: Alignment.center,
+                                                  iconSize: 50,
+                                                  color: const Color.fromARGB(
+                                                      255, 146, 119, 197),
+                                                  onPressed: () {},
+                                                  icon: const Icon(
+                                                      Icons.collections_sharp)),
+                                              const Text("Text")
+                                            ],
+                                          ),
+                                        ),
+                                        const SizedBox(
+                                          width: 20,
+                                        ),
+                                        Container(
+                                          width: 80,
+                                          height: 90,
+                                          color: Colors.grey.shade100,
+                                          child: Column(
+                                            children: [
+                                              IconButton(
+                                                  alignment: Alignment.center,
+                                                  iconSize: 50,
+                                                  color: const Color.fromARGB(
+                                                      255, 146, 119, 197),
+                                                  onPressed: () {},
+                                                  icon: const Icon(
+                                                      Icons.collections_sharp)),
+                                              const Text("Text")
+                                            ],
+                                          ),
+                                        ),
+                                        const SizedBox(
+                                          width: 20,
+                                        ),
+                                        Container(
+                                          width: 80,
+                                          height: 90,
+                                          color: Colors.grey.shade100,
+                                          child: Column(
+                                            children: [
+                                              IconButton(
+                                                  alignment: Alignment.center,
+                                                  iconSize: 50,
+                                                  color: const Color.fromARGB(
+                                                      255, 146, 119, 197),
+                                                  onPressed: () {},
+                                                  icon: const Icon(
+                                                      Icons.collections_sharp)),
+                                              const Text("Text")
+                                            ],
+                                          ),
+                                        ),
+                                        const SizedBox(
+                                          width: 20,
+                                        ),
+                                        Container(
+                                          width: 80,
+                                          height: 90,
+                                          color: Colors.grey.shade100,
+                                          child: Column(
+                                            children: [
+                                              IconButton(
+                                                  alignment: Alignment.center,
+                                                  iconSize: 50,
+                                                  color: const Color.fromARGB(
+                                                      255, 146, 119, 197),
+                                                  onPressed: () {},
+                                                  icon: const Icon(
+                                                      Icons.collections_sharp)),
+                                              const Text("Text")
+                                            ],
+                                          ),
+                                        ),
+                                        const SizedBox(
+                                          width: 20,
+                                        ),
+                                        Container(
+                                          width: 80,
+                                          height: 90,
+                                          color: Colors.grey.shade100,
+                                          child: Column(
+                                            children: [
+                                              IconButton(
+                                                  alignment: Alignment.center,
+                                                  iconSize: 50,
+                                                  color: const Color.fromARGB(
+                                                      255, 146, 119, 197),
+                                                  onPressed: () {},
+                                                  icon: const Icon(
+                                                      Icons.collections_sharp)),
+                                              const Text("Text")
+                                            ],
+                                          ),
+                                        ),
+                                        const SizedBox(
+                                          width: 10,
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.fromLTRB(8, 8, 0, 5),
+                                  child: Row(
+                                    children: [
+                                      Container(
+                                        width: 80,
+                                        height: 90,
+                                        color: Colors.grey.shade100,
+                                        child: Column(
+                                          children: [
+                                            IconButton(
+                                                alignment: Alignment.center,
+                                                iconSize: 50,
+                                                color: const Color.fromARGB(
+                                                    255, 146, 119, 197),
+                                                onPressed: () {},
+                                                icon: const Icon(
+                                                    Icons.collections_sharp)),
+                                            const Text("Text")
+                                          ],
+                                        ),
+                                      ),
+                                      const SizedBox(
+                                        width: 20,
+                                      ),
+                                      Container(
+                                        width: 80,
+                                        height: 90,
+                                        color: Colors.grey.shade100,
+                                        child: Column(
+                                          children: [
+                                            IconButton(
+                                                alignment: Alignment.center,
+                                                iconSize: 50,
+                                                color: const Color.fromARGB(
+                                                    255, 146, 119, 197),
+                                                onPressed: () {},
+                                                icon: const Icon(
+                                                    Icons.collections_sharp)),
+                                            const Text("Text")
+                                          ],
+                                        ),
+                                      ),
+                                      const SizedBox(
+                                        width: 20,
+                                      ),
+                                      Container(
+                                        width: 80,
+                                        height: 90,
+                                        color: Colors.grey.shade100,
+                                        child: Column(
+                                          children: [
+                                            IconButton(
+                                                alignment: Alignment.center,
+                                                iconSize: 50,
+                                                color: const Color.fromARGB(
+                                                    255, 146, 119, 197),
+                                                onPressed: () {},
+                                                icon: const Icon(
+                                                    Icons.collections_sharp)),
+                                            const Text("Text")
+                                          ],
+                                        ),
+                                      ),
+                                      const SizedBox(
+                                        width: 20,
+                                      ),
+                                      Container(
+                                        width: 80,
+                                        height: 90,
+                                        color: Colors.grey.shade100,
+                                        child: Column(
+                                          children: [
+                                            IconButton(
+                                                alignment: Alignment.center,
+                                                iconSize: 50,
+                                                color: const Color.fromARGB(
+                                                    255, 146, 119, 197),
+                                                onPressed: () {},
+                                                icon: const Icon(
+                                                    Icons.collections_sharp)),
+                                            const Text("Text")
+                                          ],
+                                        ),
+                                      ),
+                                      const SizedBox(
+                                        width: 20,
+                                      ),
+                                      Container(
+                                        width: 80,
+                                        height: 90,
+                                        color: Colors.grey.shade100,
+                                        child: Column(
+                                          children: [
+                                            IconButton(
+                                                alignment: Alignment.center,
+                                                iconSize: 50,
+                                                color: const Color.fromARGB(
+                                                    255, 146, 119, 197),
+                                                onPressed: () {},
+                                                icon: const Icon(
+                                                    Icons.collections_sharp)),
+                                            const Text("Text")
+                                          ],
+                                        ),
+                                      ),
+                                      const SizedBox(
+                                        width: 10,
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
                       ),
                     ),
-                                
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                        decoration: BoxDecoration(
-                          borderRadius: const BorderRadius.all(Radius.circular(10)),
-                          color: Colors.white,
-                          shape: BoxShape.rectangle,
-                          border: Border.all(
-                            color: Colors.black,
-                            width: 2.0
-                          )
-                        ),
-                        child: Column(
-                          children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                const SizedBox(
-                                  width: 10,
-                                ),
-                                IconButton(
-                                    iconSize: 60,
-                                    color: const Color.fromARGB(255, 146, 119, 197),
-                                    onPressed: () {},
-                                    icon: const Icon(Icons.featured_play_list_rounded)),
-                                const SizedBox(
-                                  width: 30,
-                                ),
-                                IconButton(
-                                    iconSize: 60,
-                                    color: const Color.fromARGB(255, 146, 119, 197),
-                                    onPressed: () {},
-                                    icon: const Icon(Icons.ramen_dining_sharp)),
-                                const SizedBox(
-                                  width: 30,
-                                ),
-                                IconButton(
-                                    iconSize: 60,
-                                    color: const Color.fromARGB(255, 146, 119, 197),
-                                    onPressed: () {},
-                                    icon: const Icon(Icons.yard_rounded)),
-                                const SizedBox(
-                                  width: 10,
-                                ),
-                              ],
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                const SizedBox(
-                                  width: 10,
-                                ),
-                                IconButton(
-                                    iconSize: 60,
-                                    color: const Color.fromARGB(255, 146, 119, 197),
-                                    onPressed: () {},
-                                    icon: const Icon(Icons.data_exploration_rounded)),
-                                const SizedBox(
-                                  width: 30,
-                                ),
-                                IconButton(
-                                    iconSize: 60,
-                                    color: const Color.fromARGB(255, 146, 119, 197),
-                                    onPressed: () {},
-                                    icon: const Icon(Icons.gpp_good_rounded)),
-                                const SizedBox(
-                                  width: 30,
-                                ),
-                                IconButton(
-                                    iconSize: 60,
-                                    color: const Color.fromARGB(255, 146, 119, 197),
-                                    onPressed: () {},
-                                    icon: const Icon(Icons.headphones_sharp)),
-                                const SizedBox(
-                                  width: 30,
-                                ),
-                              ],
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                const SizedBox(
-                                  width: 10,
-                                ),
-                                IconButton(
-                                    iconSize: 60,
-                                    color: const Color.fromARGB(255, 146, 119, 197),
-                                    onPressed: () {},
-                                    icon: const Icon(Icons.kayaking_outlined)),
-                                const SizedBox(
-                                  width: 30,
-                                ),
-                                IconButton(
-                                    iconSize: 60,
-                                    color: const Color.fromARGB(255, 146, 119, 197),
-                                    onPressed: () {},
-                                    icon: const Icon(Icons.language_outlined)),
-                                const SizedBox(
-                                  width: 30,
-                                ),
-                                IconButton(
-                                    iconSize: 60,
-                                    color: const Color.fromARGB(255, 146, 119, 197),
-                                    onPressed: () {},
-                                    icon: const Icon(Icons.folder_zip)),
-                                const SizedBox(
-                                  width: 30,
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                  )
+                ],
               ),
               const SizedBox(
                 height: 50,
               ),
-              // OutlinedButton(
-              //     style: const ButtonStyle(
-              //       overlayColor: MaterialStatePropertyAll(Colors.amberAccent),
-              //     ),
-              //     onPressed: () {
-              //       Navigator.push(
-              //           context,
-              //           MaterialPageRoute(
-              //               builder: (context) => const LoginState()));
-              //     },
-              //     child: const Text("Navigation")),
-              // const Spacer()
             ],
           ),
         ),
