@@ -3,7 +3,7 @@ import 'package:demo/Quick%20Screens/category.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const Category());
+  runApp(const MyApp());
 }
 
 var isHover = false;
