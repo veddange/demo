@@ -1,8 +1,9 @@
 import 'package:demo/Navigation%20Drawer%20Screens/navigation%20drawer/navigation_drawer.dart';
+import 'package:demo/Quick%20Screens/category.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const Category());
 }
 
 var isHover = false;
@@ -76,7 +77,10 @@ class _MyHomePageState extends State<MyHomePage> {
                       children: [
                         IconButton(
                             iconSize: 50,
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const Category()));
+                            },
                             color: const Color.fromARGB(255, 146, 119, 197),
                             icon: const Icon(Icons.dashboard)),
                         const Text("Category")

@@ -26,7 +26,7 @@ class NavigationDrawe extends State<NavState> {
   @override
   Widget build(BuildContext context) => Drawer(
         surfaceTintColor: Colors.black,
-        backgroundColor: Colors.lightGreen,
+        backgroundColor: Colors.yellow.shade200,
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -46,20 +46,20 @@ class NavigationDrawe extends State<NavState> {
             padding: const EdgeInsets.all(8.0),
             child: Row(
               children: [
-                const SizedBox(
+                SizedBox(
                   // width: 50,
                   child: Icon(
                     Icons.account_circle_outlined,
                     size: 50,
-                    color: Colors.white,
+                    color: Colors.blue.shade500,
                   ),
                 ),
             
                 SizedBox(
                   width: 200,
                   child: TextButton (
-                    style: const ButtonStyle(
-                      foregroundColor: MaterialStatePropertyAll(Colors.white),
+                    style: ButtonStyle(
+                      foregroundColor: MaterialStatePropertyAll(Colors.blue.shade500),
                       alignment: Alignment.centerLeft
                     ),
                     onPressed: () {}, 
@@ -92,7 +92,7 @@ class NavigationDrawe extends State<NavState> {
             },
             selected: widget.index == 0,
             selectedColor: Colors.white,
-            selectedTileColor: Colors.orange,
+            selectedTileColor: Colors.indigo.shade500,
           ),
           ListTile(
             leading: const Icon(Icons.person),
@@ -106,7 +106,7 @@ class NavigationDrawe extends State<NavState> {
             },
             selected: widget.index == 1,
             selectedColor: Colors.white,
-            selectedTileColor: Colors.orange,
+            selectedTileColor: Colors.indigo.shade500,
           ),
           ListTile(
               leading: const Icon(Icons.dock_outlined),
@@ -120,7 +120,7 @@ class NavigationDrawe extends State<NavState> {
               },
               selected: widget.index == 2,
               selectedColor: Colors.white,
-              selectedTileColor: Colors.orange),
+              selectedTileColor: Colors.indigo.shade500),
           ListTile(
             leading: const Icon(Icons.notifications),
             title: const Text("Notification"),
@@ -133,7 +133,7 @@ class NavigationDrawe extends State<NavState> {
             },
             selected: widget.index == 3,
             selectedColor: Colors.white,
-            selectedTileColor: Colors.orange,
+            selectedTileColor: Colors.indigo.shade500,
           ),
           ListTile(
               leading: const Icon(Icons.privacy_tip),
@@ -147,7 +147,7 @@ class NavigationDrawe extends State<NavState> {
               },
               selected: widget.index == 4,
               selectedColor: Colors.white,
-              selectedTileColor: Colors.orange),
+              selectedTileColor: Colors.indigo.shade500),
           ListTile(
               leading: const Icon(Icons.feedback),
               title: const Text("Feedback"),
@@ -160,7 +160,7 @@ class NavigationDrawe extends State<NavState> {
               },
               selected: widget.index == 5,
               selectedColor: Colors.white,
-              selectedTileColor: Colors.orange),
+              selectedTileColor: Colors.indigo.shade500),
           ListTile(
               leading: const Icon(Icons.help),
               title: const Text("Help"),
@@ -173,7 +173,7 @@ class NavigationDrawe extends State<NavState> {
               },
               selected: widget.index == 6,
               selectedColor: Colors.white,
-              selectedTileColor: Colors.orange),
+              selectedTileColor: Colors.indigo.shade500),
           ListTile(
               leading: const Icon(Icons.question_answer),
               title: const Text("FAQ"),
@@ -186,7 +186,7 @@ class NavigationDrawe extends State<NavState> {
               },
               selected: widget.index == 7,
               selectedColor: Colors.white,
-              selectedTileColor: Colors.orange),
+              selectedTileColor: Colors.indigo.shade500),
           ListTile(
               leading: const Icon(Icons.info),
               title: const Text("About Us"),
@@ -199,7 +199,7 @@ class NavigationDrawe extends State<NavState> {
               },
               selected: widget.index == 8,
               selectedColor: Colors.white,
-              selectedTileColor: Colors.orange),
+              selectedTileColor: Colors.indigo.shade500),
           SizedBox(
             height: MediaQuery.of(context).size.height / 3 + 90,
           ),
