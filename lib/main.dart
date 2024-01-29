@@ -1,5 +1,6 @@
 import 'package:demo/Navigation%20Drawer%20Screens/navigation%20drawer/navigation_drawer.dart';
 import 'package:demo/Quick%20Screens/category.dart';
+import 'package:demo/Quick%20Screens/grocery.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -47,7 +48,7 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      backgroundColor: const Color.fromARGB(255, 255, 236, 250),
+      backgroundColor: Colors.white,
       drawer: NavState(
         index: 0,
       ),
@@ -106,7 +107,10 @@ class _MyHomePageState extends State<MyHomePage> {
                       children: [
                         IconButton(
                             iconSize: 50,
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const Grocery()));
+                            },
                             color: const Color.fromARGB(255, 146, 119, 197),
                             icon: const Icon(Icons.shopping_bag)),
                         const Text("Grocery")

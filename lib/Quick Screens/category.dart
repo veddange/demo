@@ -23,7 +23,7 @@ class _CategoryState extends State<Category> {
             },
           ),
         ),
-        backgroundColor: Colors.deepPurple.shade200,
+        backgroundColor: Colors.white,
         body: Center(
             child: ConstrainedBox(
           constraints:
