@@ -2,6 +2,7 @@
 
 import 'package:demo/Authentication/mobile_number.dart';
 import 'package:demo/Authentication/signup.dart';
+import 'package:demo/main.dart';
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
@@ -40,7 +41,8 @@ class Login extends State<LoginState> {
             leading: BackButton(
               color: Colors.black,
               onPressed: () {
-                Navigator.of(context).pop();
+                Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const MyApp()));
               },
             ),
           ),

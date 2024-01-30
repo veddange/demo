@@ -1,6 +1,8 @@
 import 'package:demo/Navigation%20Drawer%20Screens/navigation%20drawer/navigation_drawer.dart';
 import 'package:demo/Quick%20Screens/category.dart';
+import 'package:demo/Quick%20Screens/clothes.dart';
 import 'package:demo/Quick%20Screens/grocery.dart';
+import 'package:demo/Quick%20Screens/offers.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -56,6 +58,21 @@ class _MyHomePageState extends State<MyHomePage> {
         child: SingleChildScrollView(
           child: Column(
             children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: SearchAnchor.bar(
+                    barHintText: "Search Product",
+                    isFullScreen: true,
+                    suggestionsBuilder:
+                        (BuildContext context, SearchController controller) {
+                      return List<Widget>.generate(5, (index) {
+                        return ListTile(
+                          titleAlignment: ListTileTitleAlignment.center,
+                          title: Text('Initial $index'),
+                        );
+                      });
+                    }),
+              ),
               const SizedBox(
                 height: 20,
               ),
@@ -80,7 +97,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             iconSize: 50,
                             onPressed: () {
                               Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => const Category()));
+                                  builder: (context) => const Category()));
                             },
                             color: const Color.fromARGB(255, 146, 119, 197),
                             icon: const Icon(Icons.dashboard)),
@@ -109,7 +126,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             iconSize: 50,
                             onPressed: () {
                               Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => const Grocery()));
+                                  builder: (context) => const Grocery()));
                             },
                             color: const Color.fromARGB(255, 146, 119, 197),
                             icon: const Icon(Icons.shopping_bag)),
@@ -123,10 +140,15 @@ class _MyHomePageState extends State<MyHomePage> {
                       children: [
                         IconButton(
                             iconSize: 50,
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => const Offers()));
+                            },
                             color: const Color.fromARGB(255, 146, 119, 197),
-                            icon: const Icon(Icons.mobile_screen_share)),
-                        const Text("Mobile")
+                            icon: const ImageIcon(
+                              AssetImage("assets/offers.png"),
+                            )),
+                        const Text("Offers")
                       ],
                     ),
                     const SizedBox(
@@ -136,10 +158,15 @@ class _MyHomePageState extends State<MyHomePage> {
                       children: [
                         IconButton(
                             iconSize: 50,
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => const Clothes()));
+                            },
                             color: const Color.fromARGB(255, 146, 119, 197),
-                            icon: const Icon(Icons.account_circle)),
-                        const Text("Login")
+                            icon: const ImageIcon(
+                              AssetImage("assets/clothes.png"),
+                            )),
+                        const Text("Clothes")
                       ],
                     ),
                   ],
@@ -150,8 +177,8 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               SizedBox(
                 child: Image.asset(
-                  'assets/whiteSlide.png',
-                  fit: BoxFit.fitWidth,
+                  'assets/sale.png',
+                  fit: BoxFit.fill,
                 ),
               ),
               const SizedBox(
