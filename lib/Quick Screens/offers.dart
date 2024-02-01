@@ -29,14 +29,13 @@ class _OffersState extends State<Offers> {
                     itemCount: 10,
                     itemBuilder: (context, index) =>  const ListTile(
                         title: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
                           children: [
                           Text("brand_name"),
                           Text("coupon_code")
                         ],)
                       )),
               )
-              // )
             ],
           ),
         ),

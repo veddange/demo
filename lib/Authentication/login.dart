@@ -55,8 +55,6 @@ class Login extends State<LoginState> {
                   width: 10,
                 ),
                 Column(
-                  // mainAxisAlignment: MainAxisAlignment.center,
-                  // crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     const SizedBox(
                       height: 30,
@@ -74,7 +72,24 @@ class Login extends State<LoginState> {
                       ),
                     ),
                     const SizedBox(
-                      height: 20,
+                      height: 10,
+                    ),
+                    Image.asset("assets/nature.jpg",
+                      width: 100,
+                      height: 100,
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+
+                    const SizedBox(
+                      width: 300,
+                      child: const Text("Email",
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 216, 202, 208),
+                          fontWeight: FontWeight.bold
+                        ),
+                      ),
                     ),
                     SizedBox(
                       width: 300,
@@ -84,13 +99,22 @@ class Login extends State<LoginState> {
                         decoration: const InputDecoration(
                           hintText: 'Enter Username',
                           hintStyle: TextStyle(
-                            color: Colors.white,
+                            color: Colors.grey,
                           ),
                         ),
                       ),
                     ),
                     const SizedBox(
-                      height: 20,
+                      height: 10,
+                    ),
+                    const SizedBox(
+                      width: 300,
+                      child: const Text("Password",
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 216, 202, 208),
+                          fontWeight: FontWeight.bold
+                        ),
+                      ),
                     ),
                     SizedBox(
                       width: 300,
@@ -101,87 +125,80 @@ class Login extends State<LoginState> {
                         decoration: const InputDecoration(
                           hintText: 'Enter Password',
                           hintStyle: TextStyle(
-                            color: Colors.white,
+                            color: Colors.grey,
                           ),
                         ),
                       ),
                     ),
                     const SizedBox(
-                      height: 50,
+                      height: 20,
+                    ),
+                    SizedBox (
+                      width: 300,
+                      child: TextButton(
+                            onPressed: () {
+                              if (txtName.text.isNotEmpty &&
+                                  txtPass.text.isNotEmpty) {
+                                debugPrint(txtPass.text);
+                              }
+                            },
+                            style: const ButtonStyle(
+                                overlayColor:
+                                    MaterialStatePropertyAll(Colors.blueGrey),
+                                backgroundColor:
+                                    MaterialStatePropertyAll(Color.fromARGB(255, 216, 202, 208)),
+                                foregroundColor:
+                                    MaterialStatePropertyAll(Color.fromARGB(255, 72, 35, 71)),
+                                minimumSize: MaterialStatePropertyAll(Size(
+                                    150 /*MediaQuery.of(context).size.width / 2*/,
+                                    40)),
+                                shape: MaterialStatePropertyAll(RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.all(Radius.circular(5))
+                                ))),
+                            child: const Text(
+                              "Login",
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                    ),
+                    const SizedBox(
+                      height: 10,
                     ),
                     SizedBox(
                         child: Row(
                       children: [
-                        OutlinedButton(
-                          onPressed: () {
-                            if (txtName.text.isNotEmpty &&
-                                txtPass.text.isNotEmpty) {
-                              debugPrint(txtPass.text);
-                            }
-                          },
-                          style: const ButtonStyle(
-                              overlayColor:
-                                  MaterialStatePropertyAll(Colors.blueGrey),
-                              backgroundColor:
-                                  MaterialStatePropertyAll(Colors.blue),
-                              foregroundColor:
-                                  MaterialStatePropertyAll(Colors.white),
-                              minimumSize: MaterialStatePropertyAll(Size(
-                                  150 /*MediaQuery.of(context).size.width / 2*/,
-                                  40)),
-                              side: MaterialStatePropertyAll(BorderSide(
-                                  color: Colors.blueGrey,
-                                  style: BorderStyle.solid,
-                                  width: 2))),
-                          child: const Text(
-                            "Login",
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                        const SizedBox(
-                          width: 5,
-                        ),
-                        OutlinedButton(
+                        TextButton(
                           onPressed: () {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) => SignUp()));
                           },
-                          style:  ButtonStyle(
+                          style:  const ButtonStyle(
                               overlayColor:
                                   const MaterialStatePropertyAll(Colors.yellow),
-                              backgroundColor:  MaterialStatePropertyAll(
-                                  Colors.blueGrey[400]),
                               foregroundColor:
                                   const MaterialStatePropertyAll(Colors.white),
                               minimumSize: const MaterialStatePropertyAll(Size(
                                   150 /*MediaQuery.of(context).size.width / 2*/,
                                   40)),
-                              side: const MaterialStatePropertyAll(BorderSide(
-                                  color: Colors.blueGrey,
-                                  style: BorderStyle.solid,
-                                  width: 2))),
+                               ),
                           child: const Text(
                             "Sign Up",
                             style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ),
-                      ],
-                    )),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    Row(
-                      children: <Widget>[
-                        OutlinedButton(
-                            onPressed: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => const MyWidget()));
-                            },
-                            onHover: (value) {
+                        const SizedBox(
+                          width: 5,
+                        ),
+                        TextButton(
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const MyWidget()));
+                          },
+                          onHover: (value) {
                               setState(() {
                                 if (isMobileHover) {
                                   isMobileHover = false;
@@ -190,29 +207,23 @@ class Login extends State<LoginState> {
                                 }
                               });
                             },
-                            style: ButtonStyle(
-                                overlayColor:
-                                    const MaterialStatePropertyAll(Colors.purple),
-                                backgroundColor:  MaterialStatePropertyAll(
-                                    Colors.purple[300]),
-                                foregroundColor: const MaterialStatePropertyAll(
-                                    Colors.white),
-                                minimumSize: MaterialStateProperty.all(const Size(
-                                    300 /*MediaQuery.of(context).size.width / 2*/,
-                                    40)),
-                                side: const MaterialStatePropertyAll(BorderSide(
-                                    color: Color.fromARGB(255, 72, 34, 67),
-                                    style: BorderStyle.solid,
-                                    width: 2.0)),
-                                alignment: Alignment.center),
-                            child: const Text(
-                              "Continue with Mobile",
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
+                          style:  const ButtonStyle(
+                              overlayColor:
+                                  const MaterialStatePropertyAll(Colors.yellow),
+                              foregroundColor:
+                                  const MaterialStatePropertyAll(Colors.white),
+                              minimumSize: const MaterialStatePropertyAll(Size(
+                                  150 /*MediaQuery.of(context).size.width / 2*/,
+                                  40)),
                               ),
-                            )),
+                          child: const Text(
+                            "Login with Mobile",
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                        ),
                       ],
-                    ),
+                    )),
+                     
                     const Spacer()
                   ],
                 ),

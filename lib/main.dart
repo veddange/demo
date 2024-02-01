@@ -3,6 +3,7 @@ import 'package:demo/Quick%20Screens/category.dart';
 import 'package:demo/Quick%20Screens/clothes.dart';
 import 'package:demo/Quick%20Screens/grocery.dart';
 import 'package:demo/Quick%20Screens/offers.dart';
+import 'package:demo/Quick%20Screens/store/productview.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -111,7 +112,10 @@ class _MyHomePageState extends State<MyHomePage> {
                       children: [
                         IconButton(
                             iconSize: 50,
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => const ProductView()));
+                            },
                             color: const Color.fromARGB(255, 146, 119, 197),
                             icon: const Icon(Icons.store)),
                         const Text("Store")
