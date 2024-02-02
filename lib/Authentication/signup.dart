@@ -30,149 +30,219 @@ class SignUp extends StatelessWidget {
         ),
         backgroundColor: const Color.fromARGB(255, 72, 35, 71),
         body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              const SizedBox(
-                height: 30,
-              ),
-              const SizedBox(
-                width: 300,
-                child: Text(
-                  "SignUp",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 28),
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                const SizedBox(
+                  height: 30,
                 ),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              SizedBox(
-                width: 300,
-                child: TextField(
-                  controller: txtFirstName,
-                  style: const TextStyle(color: Colors.white),
-                  decoration: const InputDecoration(
-                    hintText: "Enter First Name",
-                    hintStyle: TextStyle(color: Colors.white),
+                const SizedBox(
+                  width: 300,
+                  child: Text(
+                    "SignUp",
+                    textAlign: TextAlign.start,
+                    style: TextStyle(
+                        color: Color.fromARGB(255, 216, 208, 202),
+                        fontWeight: FontWeight.bold,
+                        fontSize: 28),
                   ),
                 ),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              SizedBox(
-                width: 300,
-                child: TextField(
-                  controller: txtLastName,
-                  style: const TextStyle(color: Colors.white),
-                  decoration: const InputDecoration(
-                    hintText: "Enter Last Name",
-                    hintStyle: TextStyle(
-                      color: Colors.white,
-                    ),
+                Image.asset("assets/nature.jpg",
+                  width: 100,
+                  height: 100,
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                SizedBox(
+                  width: 300,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      const Text(
+                        "First Name",
+                        style: TextStyle(
+                            fontWeight: FontWeight.w600,
+                            color: Color.fromARGB(255, 216, 208, 202)),
+                      ),
+                      TextField(
+                        controller: txtFirstName,
+                        style: const TextStyle(color: Colors.white),
+                        decoration: const InputDecoration(
+                          hintText: "Enter First Name",
+                          hintStyle: TextStyle(color: Colors.grey),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              SizedBox(
-                width: 300,
-                child: TextField(
-                  controller: txtMobileNo,
-                  style: const TextStyle(color: Colors.white),
-                  decoration: const InputDecoration(
-                    hintText: "Enter Email-Id",
-                    hintStyle: TextStyle(color: Colors.white),
+                const SizedBox(
+                  height: 10,
+                ),
+                SizedBox(
+                  width: 300,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      const Text(
+                        "Last Name",
+                        style: TextStyle(
+                            fontWeight: FontWeight.w600,
+                            color: Color.fromARGB(255, 216, 208, 202)),
+                      ),
+                      TextField(
+                        controller: txtLastName,
+                        style: const TextStyle(color: Colors.white),
+                        decoration: const InputDecoration(
+                          hintText: "Enter Last Name",
+                          hintStyle: TextStyle(
+                            color: Colors.grey,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              SizedBox(
-                width: 300,
-                child: TextField(
-                  controller: txtMobileNo,
-                  style: const TextStyle(color: Colors.white),
-                  decoration: const InputDecoration(
-                    hintText: "Enter Mobile Number",
-                    hintStyle: TextStyle(color: Colors.white),
-                  ),
-                  keyboardType: TextInputType.number,
+                const SizedBox(
+                  height: 10,
                 ),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              SizedBox(
-                width: 300,
-                child: TextField(
-                  controller: txtPassword,
-                  style: const TextStyle(color: Colors.white),
-                  obscureText: true,
-                  decoration: const InputDecoration(
-                    hintText: "Enter Password",
-                    hintStyle: TextStyle(color: Colors.white),
+                SizedBox(
+                  width: 300,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      const Text(
+                        "Email",
+                        style: TextStyle(
+                            fontWeight: FontWeight.w600,
+                            color: Color.fromARGB(255, 216, 208, 202)),
+                      ),
+                      TextField(
+                        controller: txtMobileNo,
+                        style: const TextStyle(color: Colors.white),
+                        decoration: const InputDecoration(
+                          hintText: "Enter Email-Id",
+                          hintStyle: TextStyle(color: Colors.grey),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              SizedBox(
-                width: 300,
-                child: TextField(
-                  controller: txtConfirmPassword,
-                  style: const TextStyle(color: Colors.white),
-                  obscureText: true,
-                  decoration: const InputDecoration(
-                    hintText: "Enter Confirm Password",
-                    hintStyle: TextStyle(color: Colors.white),
+                const SizedBox(
+                  height: 10,
+                ),
+                SizedBox(
+                  width: 300,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      const Text(
+                        "Mobile Number",
+                        style: TextStyle(
+                            fontWeight: FontWeight.w600,
+                            color: Color.fromARGB(255, 216, 208, 202)),
+                      ),
+                      TextField(
+                        controller: txtMobileNo,
+                        style: const TextStyle(color: Colors.white),
+                        decoration: const InputDecoration(
+                          hintText: "Enter Mobile Number",
+                          hintStyle: TextStyle(color: Colors.grey),
+                        ),
+                        keyboardType: TextInputType.number,
+                      ),
+                    ],
                   ),
                 ),
-              ),
-              const SizedBox(
-                height: 30,
-              ),
-              SizedBox(
-                width: 300,
-                child: OutlinedButton(
-                    onPressed: () {
-                      if (txtPassword.text == txtConfirmPassword.text &&
-                          txtPassword.text.isNotEmpty &&
-                          txtConfirmPassword.text.isNotEmpty) {
-                        Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => const LoginState()));
-                      }
-                    },
-                    style: const ButtonStyle(
-                        overlayColor: MaterialStatePropertyAll(Colors.limeAccent),
-                        backgroundColor: MaterialStatePropertyAll(Colors.lightGreenAccent),
-                        foregroundColor: MaterialStatePropertyAll(Colors.redAccent),
-                        side: MaterialStatePropertyAll(BorderSide(
-                          color: Colors.lightGreenAccent,
-                          style: BorderStyle.solid,
-                          width: 2.0,
-                        ))),
-                    child: const Text("Sign Up",
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                            ),
-                    )),
-              ),
-              const Spacer()
-            ],
+                const SizedBox(
+                  height: 10,
+                ),
+                SizedBox(
+                  width: 300,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      const Text(
+                        "Password",
+                        style: TextStyle(
+                            fontWeight: FontWeight.w600,
+                            color: Color.fromARGB(255, 216, 208, 202)),
+                      ),
+                      TextField(
+                        controller: txtPassword,
+                        style: const TextStyle(color: Colors.white),
+                        obscureText: true,
+                        decoration: const InputDecoration(
+                          hintText: "Enter Password",
+                          hintStyle: TextStyle(color: Colors.grey),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                SizedBox(
+                  width: 300,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      const Text(
+                        "Confirm Password",
+                        style: TextStyle(
+                            fontWeight: FontWeight.w600,
+                            color: Color.fromARGB(255, 216, 208, 202)),
+                      ),
+                      TextField(
+                        controller: txtConfirmPassword,
+                        style: const TextStyle(color: Colors.white),
+                        obscureText: true,
+                        decoration: const InputDecoration(
+                          hintText: "Enter Confirm Password",
+                          hintStyle: TextStyle(color: Colors.grey),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(
+                  height: 30,
+                ),
+                SizedBox(
+                  width: 300,
+                  child: OutlinedButton(
+                      onPressed: () {
+                        if (txtPassword.text == txtConfirmPassword.text &&
+                            txtPassword.text.isNotEmpty &&
+                            txtConfirmPassword.text.isNotEmpty) {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => const LoginState()));
+                        }
+                      },
+                      style: const ButtonStyle(
+                        // overlayColor: MaterialStatePropertyAll(Colors.limeAccent),
+                        backgroundColor: MaterialStatePropertyAll(
+                            Color.fromARGB(255, 216, 208, 202)),
+                        foregroundColor: MaterialStatePropertyAll(
+                            Color.fromARGB(255, 72, 35, 71)),
+                      ),
+                      child: const Text(
+                        "Sign Up",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      )),
+                ),
+                const SizedBox(
+                  height: 10,
+                )
+              ],
+            ),
           ),
         ),
       ),
     );
   }
 }
-
-
-// ColorScheme.fromSeed(seedColor: Colors.deepPurple)

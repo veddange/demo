@@ -1,4 +1,4 @@
-import 'package:demo/Authentication/login.dart';
+import 'package:demo/Authentication/mobile_number.dart';
 import 'package:demo/Navigation%20Drawer%20Screens/about_us.dart';
 import 'package:demo/Navigation%20Drawer%20Screens/faq.dart';
 import 'package:demo/Navigation%20Drawer%20Screens/feedback.dart';
@@ -65,7 +65,7 @@ class NavigationDrawe extends State<NavState> {
                     ),
                     onPressed: () {
                       Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => const LoginState()));
+                      builder: (context) => const MobileLoginState()));
                     }, 
                     child:  const Text(
                       "Login",

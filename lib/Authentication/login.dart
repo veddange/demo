@@ -41,8 +41,8 @@ class Login extends State<LoginState> {
             leading: BackButton(
               color: Colors.black,
               onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => const MyApp()));
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => const MyApp()));
               },
             ),
           ),
@@ -74,21 +74,21 @@ class Login extends State<LoginState> {
                     const SizedBox(
                       height: 10,
                     ),
-                    Image.asset("assets/nature.jpg",
+                    Image.asset(
+                      "assets/nature.jpg",
                       width: 100,
                       height: 100,
                     ),
                     const SizedBox(
                       height: 10,
                     ),
-
                     const SizedBox(
                       width: 300,
-                      child: const Text("Email",
+                      child: const Text(
+                        "Email",
                         style: TextStyle(
-                          color: Color.fromARGB(255, 216, 202, 208),
-                          fontWeight: FontWeight.bold
-                        ),
+                            color: Color.fromARGB(255, 216, 202, 208),
+                            fontWeight: FontWeight.bold),
                       ),
                     ),
                     SizedBox(
@@ -109,11 +109,11 @@ class Login extends State<LoginState> {
                     ),
                     const SizedBox(
                       width: 300,
-                      child: const Text("Password",
+                      child: const Text(
+                        "Password",
                         style: TextStyle(
-                          color: Color.fromARGB(255, 216, 202, 208),
-                          fontWeight: FontWeight.bold
-                        ),
+                            color: Color.fromARGB(255, 216, 202, 208),
+                            fontWeight: FontWeight.bold),
                       ),
                     ),
                     SizedBox(
@@ -133,33 +133,34 @@ class Login extends State<LoginState> {
                     const SizedBox(
                       height: 20,
                     ),
-                    SizedBox (
+                    SizedBox(
                       width: 300,
                       child: TextButton(
-                            onPressed: () {
-                              if (txtName.text.isNotEmpty &&
-                                  txtPass.text.isNotEmpty) {
-                                debugPrint(txtPass.text);
-                              }
-                            },
-                            style: const ButtonStyle(
-                                overlayColor:
-                                    MaterialStatePropertyAll(Colors.blueGrey),
-                                backgroundColor:
-                                    MaterialStatePropertyAll(Color.fromARGB(255, 216, 202, 208)),
-                                foregroundColor:
-                                    MaterialStatePropertyAll(Color.fromARGB(255, 72, 35, 71)),
-                                minimumSize: MaterialStatePropertyAll(Size(
-                                    150 /*MediaQuery.of(context).size.width / 2*/,
-                                    40)),
-                                shape: MaterialStatePropertyAll(RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.all(Radius.circular(5))
-                                ))),
-                            child: const Text(
-                              "Login",
-                              style: TextStyle(fontWeight: FontWeight.bold),
-                            ),
-                          ),
+                        onPressed: () {
+                          if (txtName.text.isNotEmpty &&
+                              txtPass.text.isNotEmpty) {
+                            debugPrint(txtPass.text);
+                          }
+                        },
+                        style: const ButtonStyle(
+                            overlayColor:
+                                MaterialStatePropertyAll(Colors.blueGrey),
+                            backgroundColor: MaterialStatePropertyAll(
+                                Color.fromARGB(255, 216, 202, 208)),
+                            foregroundColor: MaterialStatePropertyAll(
+                                Color.fromARGB(255, 72, 35, 71)),
+                            minimumSize: MaterialStatePropertyAll(Size(
+                                150 /*MediaQuery.of(context).size.width / 2*/,
+                                40)),
+                            shape: MaterialStatePropertyAll(
+                                RoundedRectangleBorder(
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(5))))),
+                        child: const Text(
+                          "Login",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                      ),
                     ),
                     const SizedBox(
                       height: 10,
@@ -174,15 +175,15 @@ class Login extends State<LoginState> {
                                 MaterialPageRoute(
                                     builder: (context) => SignUp()));
                           },
-                          style:  const ButtonStyle(
-                              overlayColor:
-                                  const MaterialStatePropertyAll(Colors.yellow),
-                              foregroundColor:
-                                  const MaterialStatePropertyAll(Colors.white),
-                              minimumSize: const MaterialStatePropertyAll(Size(
-                                  150 /*MediaQuery.of(context).size.width / 2*/,
-                                  40)),
-                               ),
+                          style: const ButtonStyle(
+                            overlayColor:
+                                const MaterialStatePropertyAll(Colors.yellow),
+                            foregroundColor:
+                                const MaterialStatePropertyAll(Colors.white),
+                            minimumSize: const MaterialStatePropertyAll(Size(
+                                150 /*MediaQuery.of(context).size.width / 2*/,
+                                40)),
+                          ),
                           child: const Text(
                             "Sign Up",
                             style: TextStyle(fontWeight: FontWeight.bold),
@@ -196,26 +197,27 @@ class Login extends State<LoginState> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => const MyWidget()));
+                                    builder: (context) =>
+                                        const MobileLoginState()));
                           },
                           onHover: (value) {
-                              setState(() {
-                                if (isMobileHover) {
-                                  isMobileHover = false;
-                                } else {
-                                  isMobileHover = true;
-                                }
-                              });
-                            },
-                          style:  const ButtonStyle(
-                              overlayColor:
-                                  const MaterialStatePropertyAll(Colors.yellow),
-                              foregroundColor:
-                                  const MaterialStatePropertyAll(Colors.white),
-                              minimumSize: const MaterialStatePropertyAll(Size(
-                                  150 /*MediaQuery.of(context).size.width / 2*/,
-                                  40)),
-                              ),
+                            setState(() {
+                              if (isMobileHover) {
+                                isMobileHover = false;
+                              } else {
+                                isMobileHover = true;
+                              }
+                            });
+                          },
+                          style: const ButtonStyle(
+                            overlayColor:
+                                const MaterialStatePropertyAll(Colors.yellow),
+                            foregroundColor:
+                                const MaterialStatePropertyAll(Colors.white),
+                            minimumSize: const MaterialStatePropertyAll(Size(
+                                150 /*MediaQuery.of(context).size.width / 2*/,
+                                40)),
+                          ),
                           child: const Text(
                             "Login with Mobile",
                             style: TextStyle(fontWeight: FontWeight.bold),
@@ -223,7 +225,6 @@ class Login extends State<LoginState> {
                         ),
                       ],
                     )),
-                     
                     const Spacer()
                   ],
                 ),
