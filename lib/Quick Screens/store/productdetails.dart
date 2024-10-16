@@ -96,9 +96,9 @@ class _ProductDetailsState extends State<ProductDetails> {
                               child: TextButton(
                                 onPressed: () {}, 
                                 style: const ButtonStyle(
-                                  foregroundColor: MaterialStatePropertyAll(Color.fromARGB(255, 218, 202, 216)),
-                                  backgroundColor: MaterialStatePropertyAll(Color.fromARGB(255, 72, 35, 71)),
-                                  shape: MaterialStatePropertyAll(RoundedRectangleBorder(
+                                  foregroundColor: WidgetStatePropertyAll(Color.fromARGB(255, 218, 202, 216)),
+                                  backgroundColor: WidgetStatePropertyAll(Color.fromARGB(255, 72, 35, 71)),
+                                  shape: WidgetStatePropertyAll(RoundedRectangleBorder(
                                     borderRadius: BorderRadius.zero
                                   ))
                                 ),

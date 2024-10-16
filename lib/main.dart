@@ -1,3 +1,7 @@
+// ignore_for_file: unrelated_type_equality_checks, unnecessary_null_comparison, avoid_print, must_be_immutable
+
+import 'package:demo/Authentication/mobile_number.dart';
+import 'package:demo/Helper/utility_helper.dart';
 import 'package:demo/Navigation%20Drawer%20Screens/navigation%20drawer/navigation_drawer.dart';
 import 'package:demo/Quick%20Screens/category.dart';
 import 'package:demo/Quick%20Screens/clothes.dart';
@@ -6,8 +10,15 @@ import 'package:demo/Quick%20Screens/offers.dart';
 import 'package:demo/Quick%20Screens/store/productview.dart';
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  var username = await Utility.getValues(key: 'username');
+  var password = await Utility.getValues(key: 'password');
+  if (username == null && password == null) {
+    runApp(const MobileLogin());
+  } else {
+    runApp(const MyApp());
+  }
 }
 
 var isHover = false;
@@ -15,7 +26,6 @@ var isSmall = false;
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -34,16 +44,11 @@ class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
 
   final String title;
-
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  // void _incrementCounter() {
-  //   setState(() {});
-  // }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -209,17 +214,14 @@ class _MyHomePageState extends State<MyHomePage> {
                               style: TextStyle(fontWeight: FontWeight.bold),
                             ),
                             SizedBox(
-                              width: MediaQuery.of(context).size.width - 205,
+                              width: MediaQuery.of(context).size.width - 215,
                             ),
                             Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 const Text(
                                   "See all",
                                   style: TextStyle(color: Colors.blue),
-                                ),
-                                const SizedBox(
-                                  width: 1,
                                 ),
                                 IconButton(
                                     color: Colors.blue,
@@ -351,10 +353,10 @@ class _MyHomePageState extends State<MyHomePage> {
                       height: 250,
                       width: MediaQuery.of(context).size.width,
                       decoration: const BoxDecoration(
-                        color: Colors.white,
+                        color: Colors.green,
                         shape: BoxShape.rectangle,
                       ),
-                      child: Column(
+                      child: ListView(
                         children: [
                           Row(
                             children: [
@@ -366,7 +368,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 style: TextStyle(fontWeight: FontWeight.bold),
                               ),
                               SizedBox(
-                                width: MediaQuery.of(context).size.width - 160,
+                                width: MediaQuery.of(context).size.width - 170,
                               ),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
@@ -387,9 +389,8 @@ class _MyHomePageState extends State<MyHomePage> {
                               )
                             ],
                           ),
-                          SingleChildScrollView(
-                            scrollDirection: Axis.horizontal,
-                            child: Column(
+                          Flex(direction: Axis.vertical, children: [
+                            Column(
                               children: [
                                 Padding(
                                   padding:
@@ -510,119 +511,122 @@ class _MyHomePageState extends State<MyHomePage> {
                                 Padding(
                                   padding:
                                       const EdgeInsets.fromLTRB(8, 8, 0, 5),
-                                  child: Row(
-                                    children: [
-                                      Container(
-                                        width: 80,
-                                        height: 90,
-                                        color: Colors.grey.shade100,
-                                        child: Column(
-                                          children: [
-                                            IconButton(
-                                                alignment: Alignment.center,
-                                                iconSize: 50,
-                                                color: const Color.fromARGB(
-                                                    255, 146, 119, 197),
-                                                onPressed: () {},
-                                                icon: const Icon(
-                                                    Icons.collections_sharp)),
-                                            const Text("Text")
-                                          ],
+                                  child: SingleChildScrollView(
+                                    scrollDirection: Axis.horizontal,
+                                    child: Row(
+                                      children: [
+                                        Container(
+                                          width: 80,
+                                          height: 90,
+                                          color: Colors.grey.shade100,
+                                          child: Column(
+                                            children: [
+                                              IconButton(
+                                                  alignment: Alignment.center,
+                                                  iconSize: 50,
+                                                  color: const Color.fromARGB(
+                                                      255, 146, 119, 197),
+                                                  onPressed: () {},
+                                                  icon: const Icon(
+                                                      Icons.collections_sharp)),
+                                              const Text("Text")
+                                            ],
+                                          ),
                                         ),
-                                      ),
-                                      const SizedBox(
-                                        width: 20,
-                                      ),
-                                      Container(
-                                        width: 80,
-                                        height: 90,
-                                        color: Colors.grey.shade100,
-                                        child: Column(
-                                          children: [
-                                            IconButton(
-                                                alignment: Alignment.center,
-                                                iconSize: 50,
-                                                color: const Color.fromARGB(
-                                                    255, 146, 119, 197),
-                                                onPressed: () {},
-                                                icon: const Icon(
-                                                    Icons.collections_sharp)),
-                                            const Text("Text")
-                                          ],
+                                        const SizedBox(
+                                          width: 20,
                                         ),
-                                      ),
-                                      const SizedBox(
-                                        width: 20,
-                                      ),
-                                      Container(
-                                        width: 80,
-                                        height: 90,
-                                        color: Colors.grey.shade100,
-                                        child: Column(
-                                          children: [
-                                            IconButton(
-                                                alignment: Alignment.center,
-                                                iconSize: 50,
-                                                color: const Color.fromARGB(
-                                                    255, 146, 119, 197),
-                                                onPressed: () {},
-                                                icon: const Icon(
-                                                    Icons.collections_sharp)),
-                                            const Text("Text")
-                                          ],
+                                        Container(
+                                          width: 80,
+                                          height: 90,
+                                          color: Colors.grey.shade100,
+                                          child: Column(
+                                            children: [
+                                              IconButton(
+                                                  alignment: Alignment.center,
+                                                  iconSize: 50,
+                                                  color: const Color.fromARGB(
+                                                      255, 146, 119, 197),
+                                                  onPressed: () {},
+                                                  icon: const Icon(
+                                                      Icons.collections_sharp)),
+                                              const Text("Text")
+                                            ],
+                                          ),
                                         ),
-                                      ),
-                                      const SizedBox(
-                                        width: 20,
-                                      ),
-                                      Container(
-                                        width: 80,
-                                        height: 90,
-                                        color: Colors.grey.shade100,
-                                        child: Column(
-                                          children: [
-                                            IconButton(
-                                                alignment: Alignment.center,
-                                                iconSize: 50,
-                                                color: const Color.fromARGB(
-                                                    255, 146, 119, 197),
-                                                onPressed: () {},
-                                                icon: const Icon(
-                                                    Icons.collections_sharp)),
-                                            const Text("Text")
-                                          ],
+                                        const SizedBox(
+                                          width: 20,
                                         ),
-                                      ),
-                                      const SizedBox(
-                                        width: 20,
-                                      ),
-                                      Container(
-                                        width: 80,
-                                        height: 90,
-                                        color: Colors.grey.shade100,
-                                        child: Column(
-                                          children: [
-                                            IconButton(
-                                                alignment: Alignment.center,
-                                                iconSize: 50,
-                                                color: const Color.fromARGB(
-                                                    255, 146, 119, 197),
-                                                onPressed: () {},
-                                                icon: const Icon(
-                                                    Icons.collections_sharp)),
-                                            const Text("Text")
-                                          ],
+                                        Container(
+                                          width: 80,
+                                          height: 90,
+                                          color: Colors.grey.shade100,
+                                          child: Column(
+                                            children: [
+                                              IconButton(
+                                                  alignment: Alignment.center,
+                                                  iconSize: 50,
+                                                  color: const Color.fromARGB(
+                                                      255, 146, 119, 197),
+                                                  onPressed: () {},
+                                                  icon: const Icon(
+                                                      Icons.collections_sharp)),
+                                              const Text("Text")
+                                            ],
+                                          ),
                                         ),
-                                      ),
-                                      const SizedBox(
-                                        width: 10,
-                                      ),
-                                    ],
+                                        const SizedBox(
+                                          width: 20,
+                                        ),
+                                        Container(
+                                          width: 80,
+                                          height: 90,
+                                          color: Colors.grey.shade100,
+                                          child: Column(
+                                            children: [
+                                              IconButton(
+                                                  alignment: Alignment.center,
+                                                  iconSize: 50,
+                                                  color: const Color.fromARGB(
+                                                      255, 146, 119, 197),
+                                                  onPressed: () {},
+                                                  icon: const Icon(
+                                                      Icons.collections_sharp)),
+                                              const Text("Text")
+                                            ],
+                                          ),
+                                        ),
+                                        const SizedBox(
+                                          width: 20,
+                                        ),
+                                        Container(
+                                          width: 80,
+                                          height: 90,
+                                          color: Colors.grey.shade100,
+                                          child: Column(
+                                            children: [
+                                              IconButton(
+                                                  alignment: Alignment.center,
+                                                  iconSize: 50,
+                                                  color: const Color.fromARGB(
+                                                      255, 146, 119, 197),
+                                                  onPressed: () {},
+                                                  icon: const Icon(
+                                                      Icons.collections_sharp)),
+                                              const Text("Text")
+                                            ],
+                                          ),
+                                        ),
+                                        const SizedBox(
+                                          width: 10,
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ],
                             ),
-                          ),
+                          ]),
                         ],
                       ),
                     ),

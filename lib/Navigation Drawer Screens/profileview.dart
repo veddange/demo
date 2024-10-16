@@ -149,8 +149,8 @@ class ProfileView extends State<Profile> {
                       onPressed: () {},
                       style: const ButtonStyle(
                           foregroundColor:
-                              MaterialStatePropertyAll(Colors.blueAccent),
-                          side: MaterialStatePropertyAll(BorderSide(
+                              WidgetStatePropertyAll(Colors.blueAccent),
+                          side: WidgetStatePropertyAll(BorderSide(
                               color: Colors.blueAccent,
                               style: BorderStyle.solid,
                               width: 1.0))),

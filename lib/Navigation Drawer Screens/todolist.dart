@@ -48,7 +48,7 @@ class TodoListView extends State<TodoList> {
                   child: OutlinedButton(
                    onPressed: () {},
                    style: const ButtonStyle(
-                   side: MaterialStatePropertyAll(BorderSide(
+                   side: WidgetStatePropertyAll(BorderSide(
                       color: Colors.blueAccent,
                     ))
                    ),

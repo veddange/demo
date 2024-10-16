@@ -1,4 +1,7 @@
+import 'dart:async';
+
 import 'package:demo/Authentication/mobile_number.dart';
+import 'package:demo/Helper/utility_helper.dart';
 import 'package:demo/Navigation%20Drawer%20Screens/about_us.dart';
 import 'package:demo/Navigation%20Drawer%20Screens/faq.dart';
 import 'package:demo/Navigation%20Drawer%20Screens/feedback.dart';
@@ -14,15 +17,81 @@ import "package:flutter/material.dart";
 class NavState extends StatefulWidget {
   NavState({super.key, required this.index});
   int index;
+  bool? isTab = false;
+  bool isValue = false;
+  String? username;
 
   @override
   State<NavState> createState() => NavigationDrawe();
 }
 
-// ignore: must_be_immutable
 class NavigationDrawe extends State<NavState> {
   // int widget.index = .widget.index;
   // NavigationDrawer({Key? key}) : super(key: key);
+  @override
+  void initState() {
+    if (mounted) {
+      setDreaver();
+    }
+    // WidgetsBinding.instance.addTimingsCallback((_) async {
+
+    // var timer = Timer.periodic(const Duration(seconds: 5), (Timer t) {});
+    // {
+    //   if (mounted) {
+
+    //     timer.cancel();
+    //   } else {
+    //     timer.cancel();
+    //   }
+    // }
+    // });
+    super.initState();
+  }
+
+  Future<void> setDreaver() async {
+    widget.username = await Utility.getValues(key: "username");
+    setState(() {
+      if (MediaQuery.of(context).size.height > 1000) {
+        widget.isTab = true;
+      } else {
+        widget.isTab = false;
+      }
+    });
+  }
+
+  void remove() async {
+    // var keyUser =;
+    // var keyPassword = await Utility.removeValue("password");
+
+    // if (keyUser.toString().isEmpty && keyPassword.toString().isEmpty) {
+    //   widget.isEmpty = true;
+    // }
+    // widget.isEmpty = false;
+  }
+
+  Future<void> _checkKeyAndNavigate() async {
+    var username = await Utility.removeValue("username");
+    var password = await Utility.removeValue("password");
+    bool isFalse = false;
+    if (username == null && password == null) {
+      isFalse = true;
+    }
+    // Check if the widget is still mounted
+    if (!mounted) return;
+
+    if (isFalse) {
+      // Navigate to Second Screen if the key does not exist
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const MobileLogin()),
+      );
+    } else {
+      // Optionally show a message if the key exists
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Key exists!')),
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) => Drawer(
@@ -37,8 +106,8 @@ class NavigationDrawe extends State<NavState> {
       );
 
   Widget buildHearder(BuildContext context) => Container(
-        padding: EdgeInsets.only(
-          top: MediaQuery.of(context).padding.top + 50,
+        padding: const EdgeInsets.only(
+          top: 40,
         ),
       );
   Widget buildMenuItems(BuildContext context) => Column(
@@ -55,27 +124,23 @@ class NavigationDrawe extends State<NavState> {
                     color: Colors.blue.shade500,
                   ),
                 ),
-            
                 SizedBox(
                   width: 200,
-                  child: TextButton (
-                    style: ButtonStyle(
-                      foregroundColor: MaterialStatePropertyAll(Colors.blue.shade500),
-                      alignment: Alignment.centerLeft
-                    ),
-                    onPressed: () {
-                      Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => const MobileLoginState()));
-                    }, 
-                    child:  const Text(
-                      "Login",
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold
-                      ),
-                      textAlign: TextAlign.left,  
-                    )
-                  ),
+                  child: TextButton(
+                      style: ButtonStyle(
+                          foregroundColor:
+                              WidgetStatePropertyAll(Colors.blue.shade500),
+                          alignment: Alignment.centerLeft),
+                      onPressed: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => const MobileLogin()));
+                      },
+                      child: Text(
+                        widget.username ?? "Login",
+                        style: const TextStyle(
+                            fontSize: 20, fontWeight: FontWeight.bold),
+                        textAlign: TextAlign.left,
+                      )),
                 ),
                 const Spacer()
               ],
@@ -205,17 +270,21 @@ class NavigationDrawe extends State<NavState> {
               selectedColor: Colors.white,
               selectedTileColor: Colors.indigo.shade500),
           SizedBox(
-            height: MediaQuery.of(context).size.height / 3 + 90,
+            height: widget.isTab ?? false
+                ? MediaQuery.of(context).size.height -
+                    MediaQuery.of(context).size.height / 4 * 2
+                : MediaQuery.of(context).size.height / 4,
           ),
-          OutlinedButton(
-              onPressed: () {},
+          ElevatedButton(
+              onPressed: _checkKeyAndNavigate,
               style: ButtonStyle(
-                  fixedSize: MaterialStatePropertyAll(
-                      Size.fromWidth(MediaQuery.of(context).size.width - 120)),
-                  backgroundColor: const MaterialStatePropertyAll(Colors.white),
-                  overlayColor: const MaterialStatePropertyAll(Colors.blue),
-                  foregroundColor: const MaterialStatePropertyAll(Colors.blue),
-                  side: const MaterialStatePropertyAll(
+                  shape: WidgetStatePropertyAll(RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(5.0))),
+                  fixedSize: const WidgetStatePropertyAll(Size.fromWidth(280)),
+                  backgroundColor: const WidgetStatePropertyAll(Colors.white),
+                  overlayColor: const WidgetStatePropertyAll(Colors.blue),
+                  foregroundColor: const WidgetStatePropertyAll(Colors.blue),
+                  side: const WidgetStatePropertyAll(
                       BorderSide(color: Colors.blue))),
               child: const Text("Logout")),
           const SizedBox(

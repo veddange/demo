@@ -83,8 +83,8 @@ class FeedbackView extends State<FeedBack> {
                   child: OutlinedButton(
                     onPressed: null , 
                     style: ButtonStyle(
-                      foregroundColor: MaterialStatePropertyAll(Colors.blueAccent),
-                      side: MaterialStatePropertyAll(BorderSide(
+                      foregroundColor: WidgetStatePropertyAll(Colors.blueAccent),
+                      side: WidgetStatePropertyAll(BorderSide(
                         color: Colors.blueAccent
                       ))
                     ),
